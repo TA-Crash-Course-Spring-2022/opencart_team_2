@@ -46,22 +46,8 @@ public class AdminHomePage extends BasePage {
     @FindBy(xpath = "//*[@id=\"range\"]/li[4]/a")
     private WebElement Calendar_Year;
 
-    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[3]/div[2]/div/div[2]/table/tbody/tr[1]")
-    private List<WebElement> ViewButton_16654;
-
-    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[3]/div[2]/div/div[2]/table/tbody/tr[2]")
-    private List<WebElement> ViewButton_16653;
-
-    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[3]/div[2]/div/div[2]/table/tbody/tr[3]")
-    private List<WebElement> ViewButton_16652;
-
-    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[3]/div[2]/div/div[2]/table/tbody/tr[4]")
-    private List<WebElement> ViewButton_16651;
-
-    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[3]/div[2]/div/div[2]/table/tbody/tr[5]")
-    private List<WebElement> ViewButton_16650;
-
     public AdminHomePage(WebDriver driver) {
+
         super(driver);
     }
 
@@ -115,25 +101,5 @@ public class AdminHomePage extends BasePage {
 
     public WebElement getCalendar_Year() {
         return Calendar_Year;
-    }
-
-    public WebElement getViewButton_16654(int xpath) {
-        return ViewButton_16654.get(xpath);
-    }
-
-    public WebElement getViewButton_16653(int xpath) {
-        return ViewButton_16653.get(xpath);
-    }
-
-    public WebElement getViewButton_16652(int xpath) {
-        return ViewButton_16652.get(xpath);
-    }
-
-    public WebElement getViewButton_16651(int xpath) {
-        return ViewButton_16651.get(xpath);
-    }
-
-    public WebElement getViewButton_16650(int xpath) {
-        return ViewButton_16650.get(xpath);
     }
 }
