@@ -47,7 +47,6 @@ public class AdminHomePage extends BasePage {
     private WebElement Calendar_Year;
 
     public AdminHomePage(WebDriver driver) {
-
         super(driver);
     }
 
