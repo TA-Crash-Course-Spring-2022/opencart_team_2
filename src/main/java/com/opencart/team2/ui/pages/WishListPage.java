@@ -7,143 +7,141 @@ import java.util.List;
 public class WishListPage extends BasePage {
 
     @FindBy (xpath = "//div[@id='content']//div[@class='table-responsive']//tbody//tr//td[@class='text-center']")
-    private List <WebElement> Product_Image;
+    private List <WebElement> productImage;
 
     @FindBy(xpath = "//div[@id='content']//table//tbody//tr//td//a[contains(@href,'product/product')]")
-    private List<WebElement> Product_Name;
+    private List<WebElement> productName;
 
     @FindBy (xpath = "//div[@id='content']//table/tbody/tr/td[3]")
-    private List<WebElement> Product_Model;
+    private List<WebElement> productModel;
 
     @FindBy (xpath = "//div[@id='content']//table/tbody/tr/td[4]")
-    private List<WebElement> Product_Stock;
+    private List<WebElement> productStock;
 
     @FindBy(xpath = "//div[@id='content']//table//tbody//tr//td//div[@class= 'price']")
-    private List<WebElement> Product_Price;
+    private List<WebElement> productPrice;
 
     @FindBy(xpath = "//div[@id='content']//table//tbody//tr//td//button[@class='btn btn-primary']")
-    private List<WebElement> Product_AddToCard;
+    private List<WebElement> productAddToCard;
 
     @FindBy(xpath = "//div[@id='content']//table//tbody//tr//td//a[contains(@href,'account/wishlist')]")
-    private List<WebElement> Product_Remove;
+    private List<WebElement> productRemove;
 
     @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div/a")
-    private WebElement Continue;
+    private WebElement continueButton;
 
     @FindBy(xpath = "//*[@id=\"column-right\"]/div/a[1]")
-    private WebElement MyAccount;
+    private WebElement myAccount;
 
     @FindBy(xpath = "//*[@id=\"column-right\"]/div/a[2]")
-    private WebElement EditAccount;
+    private WebElement editAccount;
 
     @FindBy(xpath = "//*[@id=\"column-right\"]/div/a[3]")
-    private WebElement Password;
+    private WebElement password;
 
     @FindBy(xpath = "//*[@id=\"column-right\"]/div/a[4]")
-    private WebElement AddressBook;
+    private WebElement addressBook;
 
     @FindBy(xpath = "//*[@id=\"column-right\"]/div/a[5]")
-    private WebElement WishList;
+    private WebElement wishList;
 
     @FindBy(xpath = "//*[@id=\"column-right\"]/div/a[6]")
-    private WebElement OrderHistory;
+    private WebElement orderHistory;
 
     @FindBy(xpath = "//*[@id=\"column-right\"]/div/a[7]")
-    private WebElement Downloads;
+    private WebElement downloads;
 
     @FindBy(xpath = "//*[@id=\"column-right\"]/div/a[8]")
-    private WebElement RecurringPayments;
+    private WebElement recurringPayments;
 
     @FindBy(xpath = "//*[@id=\"column-right\"]/div/a[9]")
-    private WebElement RewardPoints;
+    private WebElement rewardPoints;
 
     @FindBy(xpath = "//*[@id=\"column-right\"]/div/a[10]")
-    private WebElement Returns;
+    private WebElement returns;
 
     @FindBy(xpath = "//*[@id=\"column-right\"]/div/a[11]")
-    private WebElement Transactions;
+    private WebElement transactions;
 
     @FindBy(xpath = "//*[@id=\"column-right\"]/div/a[12]")
-    private WebElement Newsletter;
+    private WebElement newsLetter;
 
     @FindBy(xpath = "//*[@id=\"column-right\"]/div/a[13]")
-    private WebElement Logout;
+    private WebElement logOut;
 
     public WishListPage(WebDriver driver) {
         super(driver);
     }
 
-    public WebElement getProduct_Name(int xpath) {
-        return Product_Name.get(xpath);
+    public WebElement getProductName(int xpath) {
+        return productName.get(xpath);
     }
 
-    public WebElement getProduct_Image (int xpath) {return Product_Image.get(xpath);}
+    public WebElement getProductImage(int xpath) {return productImage.get(xpath);}
 
-    public WebElement getProduct_Model (int xpath) {return Product_Model.get(xpath);}
+    public WebElement getProductModel(int xpath) {return productModel.get(xpath);}
 
-    public WebElement getProduct_Stock (int xpath) {return Product_Stock.get(xpath);}
+    public WebElement getProductStock(int xpath) {return productStock.get(xpath);}
 
-    public WebElement getProduct_Price(int xpath) {
-        return Product_Price.get(xpath);
+    public WebElement getProductPrice(int xpath) {
+        return productPrice.get(xpath);
     }
 
-    public WebElement getProduct_AddToCard(int xpath) {
-        return Product_AddToCard.get(xpath);
+    public WebElement getProductAddToCard(int xpath) {
+        return productAddToCard.get(xpath);
     }
 
-    public WebElement getProduct_Remove(int xpath) {
-        return Product_Remove.get(xpath);
+    public WebElement getProductRemove(int xpath) {
+        return productRemove.get(xpath);
     }
 
-    public WebElement getContinue() {
-        return Continue;
-    }
+    public WebElement getContinue() {return continueButton;}
 
-    public WebElement getMyAccount () {
-        return MyAccount;
+    public WebElement getMyAccount() {
+        return myAccount;
     }
 
     public WebElement getPassword() {
-        return Password;
+        return password;
     }
 
     public WebElement getAddressBook() {
-        return AddressBook;
+        return addressBook;
     }
 
     public WebElement getWishList() {
-        return WishList;
+        return wishList;
     }
 
     public WebElement getOrderStory() {
-        return OrderHistory;
+        return orderHistory;
     }
 
     public WebElement getDownloads() {
-        return Downloads;
+        return downloads;
     }
 
     public WebElement getRecurringPayments() {
-        return RecurringPayments;
+        return recurringPayments;
     }
 
     public WebElement getRewardPoints() {
-        return RewardPoints;
+        return rewardPoints;
     }
 
-    public WebElement getReturns () {
-        return Returns;
+    public WebElement getReturns() {
+        return returns;
     }
 
     public WebElement getTransactions() {
-        return Transactions;
+        return transactions;
     }
 
     public WebElement getNewsletter() {
-        return Newsletter;
+        return newsLetter;
     }
 
     public WebElement getLogout() {
-        return Logout;
+        return logOut;
     }
 }
