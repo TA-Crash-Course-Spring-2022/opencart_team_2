@@ -3,82 +3,70 @@ package com.opencart.team2.ui.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import javax.print.DocFlavor;
+import org.openqa.selenium.support.ui.Select;
 
 public class AdminEditTaxClasses extends BasePage{
 
-    @FindBy (xpath = "//*[@id=\"content\"]/div[1]/div/ul/li[2]/a")
-    private WebElement Tax_Classes_Edit;
-
     @FindBy (xpath = "//*[@id=\"content\"]/div[1]/div/div/button/i")
-    private WebElement Save_Edit;
+    private WebElement saveEdit;
 
     @FindBy (xpath = "//*[@id=\"content\"]/div[1]/div/div/a")
-    private WebElement Cancel_Edit;
+    private WebElement cancelEdit;
 
     @FindBy (xpath = "//*[@id=\"input-title\"]")
-    private WebElement Tax_Class_Title;
+    private WebElement taxClassTitle;
 
     @FindBy (xpath = "//*[@id=\"input-description\"]")
-    private WebElement Tax_Class_Description;
+    private WebElement taxClassDescription;
 
     @FindBy (xpath = "//*[@id=\"tax-rule-row0\"]/td[1]/select")
-    private WebElement TaxRate_EcoTax;
+    private WebElement taxRate;
 
     @FindBy (xpath = "//*[@id=\"tax-rule-row0\"]/td[2]/select")
-    private WebElement BasedOn_StoreAdress;
+    private WebElement taxBasedOn;
 
     @FindBy (xpath = "//*[@id=\"tax-rule-row0\"]/td[3]/input")
-    private WebElement Priority;
+    private WebElement priority;
 
     @FindBy (xpath = "//*[@id=\"tax-rule-row0\"]/td[4]/button")
-    private WebElement Remove_Button;
+    private WebElement removeButton;
 
     @FindBy (xpath = "//*[@id=\"tax-rule\"]/tfoot/tr/td[2]/button")
-    private WebElement Add_Rule;
+    private WebElement addRule;
 
     public AdminEditTaxClasses(WebDriver driver) {
         super(driver);
     }
 
-    public WebElement getTax_Classes_Edit () {
-        return Tax_Classes_Edit;
+    public WebElement getSaveEdit() {
+        return saveEdit;
     }
 
-    public WebElement getSave_EditSave_Edit () {
-        return Save_Edit;
+    public WebElement getCancelEdit() {
+        return cancelEdit;
     }
 
-    public WebElement getCancel_Edit () {
-        return Cancel_Edit;
+    public WebElement getTaxClassTitle() {
+        return taxClassTitle;
     }
 
-    public WebElement getSave_EditTax_Class_Title () {
-        return Tax_Class_Title;
+    public WebElement getTaxClassDescription() {
+        return taxClassDescription;
     }
 
-    public WebElement getSave_EditTax_Class_Description () {
-        return Tax_Class_Description;
+    public Select getTaxRate() {return new Select (taxRate);}
+
+    public Select getTaxBaseOn() {return new Select(taxBasedOn);}
+
+    public WebElement getPriority() {
+        return priority;
     }
 
-    public WebElement getTaxRate_EcoTax () {
-        return TaxRate_EcoTax;
+    public WebElement getRemoveButton() {
+        return removeButton;
     }
 
-    public WebElement getBasedOn_StoreAdress () {
-        return BasedOn_StoreAdress;
-    }
-
-    public WebElement getPriority () {
-        return Priority;
-    }
-
-    public WebElement getRemove_Button () {
-        return Remove_Button;
-    }
-
-    public WebElement getAdd_Rule () {
-        return Add_Rule;
+    public WebElement getAddRule() {
+        return addRule;
     }
 }
