@@ -1,6 +1,5 @@
 package com.opencart.team2.ui.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -19,8 +18,8 @@ public class ChangePasswordPage extends BasePage {
     private WebElement continueButton;
 
 
-    public ChangePasswordPage(WebDriver driver) {
-        super(driver);
+    public ChangePasswordPage() {
+        super();
     }
 
     public WebElement getPasswordInput() {

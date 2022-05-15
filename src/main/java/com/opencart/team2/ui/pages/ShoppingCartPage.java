@@ -1,8 +1,8 @@
 package com.opencart.team2.ui.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -57,7 +57,7 @@ public class ShoppingCartPage extends BasePage {
     private WebElement shippingGetQuotes;
 
     @FindBy(xpath = "//div[@class='panel-group']//a[contains(@href, 'voucher')]")
-    private WebElement giftCertificateClick;
+    private WebElement giftCertificateDropdown;
 
     @FindBy(id = "input-voucher")
     private WebElement giftCertificateInput;
@@ -84,8 +84,8 @@ public class ShoppingCartPage extends BasePage {
     private WebElement continueShoppingButton;
 
 
-    public ShoppingCartPage(WebDriver driver) {
-        super(driver);
+    public ShoppingCartPage() {
+        super();
     }
 
     public WebElement getImage(int id) {
@@ -136,12 +136,12 @@ public class ShoppingCartPage extends BasePage {
         return shippingDropdown;
     }
 
-    public WebElement getShippingCountry() {
-        return shippingCountry;
+    public Select getShippingCountry() {
+        return new Select(shippingCountry);
     }
 
-    public WebElement getShippingRegion() {
-        return shippingRegion;
+    public Select getShippingRegion() {
+        return new Select(shippingRegion);
     }
 
     public WebElement getShippingPostCode() {
@@ -152,8 +152,8 @@ public class ShoppingCartPage extends BasePage {
         return shippingGetQuotes;
     }
 
-    public WebElement getGiftCertificateClick() {
-        return giftCertificateClick;
+    public WebElement getGiftCertificateDropdown() {
+        return giftCertificateDropdown;
     }
 
     public WebElement getGiftCertificateInput() {
