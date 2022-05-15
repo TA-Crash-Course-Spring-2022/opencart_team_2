@@ -10,46 +10,44 @@ import java.util.List;
 public class ComparePage extends BasePage {
 
     @FindBy (xpath = "//div[@id='content']//table//tbody//tr//td//a[contains(@href,'product/product')]")
-    private List <WebElement> Product_Name;
+    private List <WebElement> productName;
 
     @FindBy (xpath = "//div[@id='content']//table//tbody//tr//td[@class= 'text-center']")
-    private List <WebElement> Product_Image;
+    private List <WebElement> productImage;
 
     @FindBy (xpath = "//div[@id='content']//table//tbody//tr//td[@class= 'rating']")
-    private List <WebElement> Product_Rating;
+    private List <WebElement> productRating;
 
     @FindBy (xpath = "//div[@id='content']//table//tbody//tr//td[@class= 'description']")
-    private List <WebElement> Product_Summary;
+    private List <WebElement> productSummary;
 
     @FindBy (xpath = "//div[@id='content']//table//tbody//tr//td//input[@class='btn btn-primary btn-block']")
-    private List <WebElement> Product_AddToCard;
+    private List <WebElement> productAddToCard;
 
     @FindBy (xpath = "//div[@id='content']//table//tbody//tr//td//a[contains(@href,'product/compare')]")
-    private List <WebElement> Product_Remove;
+    private List <WebElement> productRemove;
 
     public ComparePage(WebDriver driver) {
         super(driver);
     }
 
-    public WebElement getProduct_Name(int xpath){
-                return Product_Name.get(xpath);
+    public WebElement getProductName(int xpath){
+                return productName.get(xpath);
     }
 
-    public WebElement getProduct_Image(int xpath) {
-        return Product_Image.get(xpath);
+    public WebElement getProductImage(int xpath) {
+        return productImage.get(xpath);
     }
 
-    public WebElement getProduct_Rating (int xpath) {
-                return Product_Rating.get(xpath);
+    public WebElement getProductRating(int xpath) {
+                return productRating.get(xpath);
     }
 
-    public WebElement getProduct_Summary (int xpath) {return Product_Summary.get(xpath); }
+    public WebElement getProductSummary(int xpath) {return productSummary.get(xpath); }
 
-    public WebElement getProduct_AddToCard (int xpath) {
-                return Product_AddToCard.get(xpath);
-    }
+    public WebElement getProductAddToCard(int xpath) {return productAddToCard.get(xpath);}
 
-    public WebElement getProduct_Remove (int xpath) {
-                return Product_Remove.get(xpath);
+    public WebElement getProductRemove( int xpath) {
+                return productRemove.get(xpath);
     }
 }
