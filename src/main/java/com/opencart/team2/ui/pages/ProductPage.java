@@ -20,11 +20,17 @@ public class ProductPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"button-cart\"]")
     private WebElement addToCart;
 
+    @FindBy(xpath = "//*[@id='content']/div[3]/div/div/div[2]/div[2]/button[1]")
+    private  WebElement addToCartOnSearch;
+
     @FindBy(xpath = "//*[@id=\"content\"]/div[1]/div[1]/ul[2]/li[1]/a")
     private WebElement descriptionButton;
 
     @FindBy(xpath = "//*[@id=\"content\"]/div[1]/div[1]/ul[2]/li[2]/a")
     private WebElement reviewsButton;
+
+    @FindBy(xpath = "//*[@id=\"content\"]/div[1]/div[2]/div[3]/p/a[2]")
+    private WebElement writeReviewRightButton;
 
     @FindBy(xpath = "//*[@id=\"input-name\"]")
     private WebElement reviewsNameLine;
@@ -33,7 +39,10 @@ public class ProductPage extends BasePage {
     private WebElement reviewsReviewField;
 
     @FindBy(xpath = "//div[@class='rating']//p//span[@class='fa fa-stack']")
-    private List<WebElement> ratingButtons;
+    private List<WebElement> ratingStarsButtons;
+
+    @FindBy(xpath = "//div[@class='col-sm-12']//input[@name='rating']")
+    private List<WebElement> ratingReviewButtons;
 
     @FindBy(id = "button-review")
     private WebElement continueButton;
@@ -57,6 +66,10 @@ public class ProductPage extends BasePage {
         return addToCart;
     }
 
+    public WebElement getAddToCartOnSearch () {
+        return addToCartOnSearch;
+    }
+
     public WebElement getDescriptionButton() {
         return descriptionButton;
     }
@@ -69,9 +82,15 @@ public class ProductPage extends BasePage {
         return reviewsNameLine;
     }
 
+    public WebElement getWriteReviewRightButton() {
+        return writeReviewRightButton;
+    }
+
     public WebElement getReviewsReviewField() { return reviewsReviewField; }
 
-    public WebElement getRatingButtons(int id) { return ratingButtons.get(id); }
+    public WebElement getRatingStarsButtons (int id) { return ratingStarsButtons.get(id); }
+
+    public WebElement getRatingReviewButtons (int id) { return ratingReviewButtons.get(id); }
 
     public WebElement getContinueButton() { return continueButton; }
 

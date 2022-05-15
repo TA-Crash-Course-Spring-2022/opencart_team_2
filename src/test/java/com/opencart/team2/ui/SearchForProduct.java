@@ -1,13 +1,13 @@
 package com.opencart.team2.ui;
 
-import business.ProductPageBL;
 import business.SearchFieldHeaderBL;
 import org.testng.annotations.Test;
 
-public class ProdAddSearch extends TestRunner {
+public class SearchForProduct extends TestRunner {
 
     @Test
     public void Test() {
+
         driver.get("https://demo.opencart.com");
 
         String productName = "Iphone";
@@ -15,9 +15,6 @@ public class ProdAddSearch extends TestRunner {
         searchFieldHeaderBL.inputProduct(productName);
 
         searchFieldHeaderBL.confirmSearch();
-
-        ProductPageBL productPageBL = new ProductPageBL(driver);
-        productPageBL.addToCartOnSearch();
 
     }
 }

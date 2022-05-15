@@ -16,12 +16,8 @@ public class SearchFieldHeader extends BasePage {
     @FindBy(xpath = "//*[@id='search']/span/button")
     private WebElement enter;
 
-    public WebElement getSearchLine() {
-        return searchLine;
-    }
+    public WebElement getSearchLine() { return searchLine; }
 
-    public WebElement getEnter() {
-        return enter;
-    }
+    public WebElement getEnter() { return enter; }
 
 }

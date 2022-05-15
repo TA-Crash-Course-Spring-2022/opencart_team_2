@@ -3,10 +3,11 @@ package com.opencart.team2.ui.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import java.util.List;
 
-public class AddCurrencyPg extends BasePage {
+public class AdminAddCurrencyPg extends BasePage {
 
-    public AddCurrencyPg (WebDriver driver) {
+    public AdminAddCurrencyPg (WebDriver driver) {
         super(driver);
     }
 
@@ -28,14 +29,8 @@ public class AddCurrencyPg extends BasePage {
     @FindBy(xpath = "//*[@id=\"input-value\"]")
     private WebElement ValueField;
 
-    @FindBy(xpath = "//*[@id=\"input-status\"]")
-    private WebElement StatusMenu;
-
-    @FindBy(xpath = "//*[@id=\"input-status\"]/option[2]")
-    private WebElement StatusMenuDisabled;
-
-    @FindBy(xpath = "//*[@id=\"input-status\"]/option[1]")
-    private WebElement StatusMenuEnable;
+    @FindBy(xpath = "//div[@class='panel-body']//select[@id='input-status']//option")
+    private List<WebElement> StatusMenu;
 
     @FindBy(xpath = "//*[@id=\"content\"]/div[1]/div/div/button")
     private WebElement SaveButton;
@@ -73,16 +68,8 @@ public class AddCurrencyPg extends BasePage {
         return ValueField;
     }
 
-    public WebElement getStatusMenu() {
-        return StatusMenu;
-    }
-
-    public WebElement getStatusMenuDisabled() {
-        return StatusMenuDisabled;
-    }
-
-    public WebElement getStatusMenuEnable() {
-        return StatusMenuEnable;
+    public WebElement getStatusMenu(int id) {
+        return StatusMenu.get(id);
     }
 
     public WebElement getSaveButton() {

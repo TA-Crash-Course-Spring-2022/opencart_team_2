@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class TaxClassesPg extends BasePage {
+public class AdminTaxClassesPg extends BasePage {
 
-    public TaxClassesPg (WebDriver driver) {
+    public AdminTaxClassesPg(WebDriver driver) {
         super(driver);
     }
 
@@ -21,8 +21,8 @@ public class TaxClassesPg extends BasePage {
     @FindBy(linkText = "Are you sure")
     private WebElement Alert;
 
-    @FindBy(xpath = "//*[@id=\"form-tax-class\"]/div/table/tbody/tr[2]/td[3]/a")
-    private WebElement EditButton;
+    @FindBy(xpath = "//div[@class='panel-body']//table[@class='table table-bordered table-hover']//tbody//tr//td//a")
+    private List<WebElement> EditButton;
 
     @FindBy(className = "asc")
     private WebElement SortButton;
@@ -46,8 +46,8 @@ public class TaxClassesPg extends BasePage {
         return Alert;
     }
 
-    public WebElement getEditButton() {
-        return EditButton;
+    public WebElement getEditButton(int id) {
+        return EditButton.get(id);
     }
 
     public WebElement getSortButton() {

@@ -23,13 +23,13 @@ public class AdminLoginPg extends BasePage {
     private WebElement LoginButton;
 
     @FindBy(xpath = "//*[@id=\"input-email\"]")
-    private WebElement EmailAddressFP;
+    private WebElement EmailAddressFieldFP;
 
     @FindBy(xpath = "//*[@id='content']/div/div/div/div/div[2]/form/div[2]/button)")
-    private WebElement ResetButton;
+    private WebElement ResetButtonFP;
 
     @FindBy(xpath = "//*[@id=\"content\"]/div/div/div/div/div[2]/form/div[2]/a")
-    private WebElement CancelButton;
+    private WebElement CancelButtonFP;
 
     public WebElement getUsernameField() {
         return UsernameField;
@@ -47,13 +47,13 @@ public class AdminLoginPg extends BasePage {
         return LoginButton;
     }
 
-    public WebElement getEmailAddressFP() { return EmailAddressFP; }
+    public WebElement getEmailAddressFieldFP() { return EmailAddressFieldFP; }
 
-    public WebElement getResetButton() {
-        return ResetButton;
+    public WebElement getResetButtonFP() {
+        return ResetButtonFP;
     }
 
-    public WebElement getCancelButton() {
-        return CancelButton;
+    public WebElement getCancelButtonFP() {
+        return CancelButtonFP;
     }
 }
