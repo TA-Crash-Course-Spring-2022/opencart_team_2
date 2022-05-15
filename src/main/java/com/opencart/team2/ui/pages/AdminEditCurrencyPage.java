@@ -5,70 +5,61 @@ import org.openqa.selenium.support.FindBy;
 
 public class AdminEditCurrencyPage extends BasePage{
 
-    @FindBy (xpath = "//*[@id=\"content\"]/div[1]/div/ul/li[2]/a")
-    private WebElement Currencies;
-
     @FindBy (xpath = "//*[@id=\"content\"]/div[1]/div/div/button")
-    private WebElement Save;
+    private WebElement save;
 
     @FindBy (xpath = "//*[@id=\"content\"]/div[1]/div/div/a")
-    private WebElement Cancel;
+    private WebElement cancel;
 
     @FindBy (xpath = "//*[@id=\"input-title\"]")
-    private WebElement Input_CurrencyTitle;
+    private WebElement inputCurrencyTitle;
 
     @FindBy (xpath = "//*[@id=\"input-code\"]")
-    private WebElement Input_Code;
+    private WebElement inputCode;
 
     @FindBy (xpath = "//*[@id=\"input-symbol-left\"]")
-    private WebElement Input_SymbolLeft;
+    private WebElement inputSymbolLeft;
 
     @FindBy (xpath = "//*[@id=\"input-symbol-right\"]")
-    private WebElement Input_SymbolRight;
+    private WebElement inputSymbolRight;
 
     @FindBy (xpath = "//*[@id=\"input-value\"]")
-    private WebElement Input_Value;
+    private WebElement inputValue;
 
     @FindBy (xpath = "//*[@id=\"input-status\"]")
-    private WebElement Input_Status;
+    private WebElement inputStatus;
 
     public AdminEditCurrencyPage(WebDriver driver) {
         super(driver);
     }
 
-    public WebElement getCurrencies () {
-        return Currencies;
-    }
-
     public WebElement getSave() {
-        return Save;
+        return save;
     }
 
     public WebElement getCancel() {
-        return Cancel;
+        return cancel;
     }
 
-    public WebElement getInput_CurrencyTitle() {
-        return Input_CurrencyTitle;
+    public WebElement getInputCurrencyTitle() {
+        return inputCurrencyTitle;
     }
 
-    public WebElement getInput_Code() {
-        return Input_Code;
+    public WebElement getInputCode() {
+        return inputCode;
     }
 
-    public WebElement getInput_SymbolLeft() {
-        return Input_SymbolLeft;
+    public WebElement getInputSymbolLeft() {return inputSymbolLeft;}
+
+    public WebElement getInputSymbolRight() {
+        return inputSymbolRight;
     }
 
-    public WebElement getInput_SymbolRight () {
-        return Input_SymbolRight;
+    public WebElement getInputValue() {
+        return inputValue;
     }
 
-    public WebElement getInput_Value () {
-        return Input_Value;
-    }
-
-    public WebElement getInput_Status () {
-        return Input_Status;
+    public WebElement getInputStatus() {
+        return inputStatus;
     }
 }
