@@ -1,104 +1,97 @@
 package com.opencart.team2.ui.pages;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
-
 public class AdminHomePage extends BasePage {
 
-    @FindBy(xpath = "//*[@id=\"content\"]/div[1]/div/ul/li[2]/a")
-    private WebElement Dashboard;
 
-    @FindBy(xpath = "//*[@id=\"button-setting\"]")
-    private WebElement Settings;
+    @FindBy(xpath = "//*[@id=\"button-developer\"]")
+    private WebElement settings;
 
-    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[1]/div[1]/div/div[3]/a")
-    private WebElement ViewMore_TotalOrders;
+    @FindBy (xpath = "//*[@id=\"content\"]/div[2]/div[1]/div[1]/div/div[3]")
+    private WebElement viewMoreTotalOrders;
 
-    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[1]/div[2]/div/div[3]/a")
-    private WebElement ViewMore_TotalSales;
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[1]/div[2]/div/div[3]")
+    private WebElement viewMoreTotalSales;
 
     @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[1]/div[3]/div/div[3]/a")
-    private WebElement ViewMore_TotalCustomers;
+    private WebElement viewMoreTotalCustomers;
 
     @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[1]/div[4]/div/div[3]/a")
-    private WebElement ViewMore_PeopleOnline;
+    private WebElement viewMorePeopleOnline;
 
     @FindBy(xpath = "//*[@id=\"vmap\"]/div[1]")
-    private WebElement WorldMap_Zoomin;
+    private WebElement worldMapZoomin;
 
     @FindBy(xpath = "//*[@id=\"vmap\"]/div[2]")
-    private WebElement WordlMap_Zoomout;
-
-    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div[2]/div/div[1]/div/a/i[1]")
-    private WebElement Calendar_SalesAnalytics;
+    private WebElement worldMapZoomout;
 
     @FindBy(xpath = "//*[@id=\"range\"]/li[1]/a")
-    private WebElement Calendar_Today;
+    private WebElement calendarToday;
+
+    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div[2]/div/div[1]/div/a")
+    private WebElement calendarMainButton;
 
     @FindBy(xpath = "//*[@id=\"range\"]/li[2]/a")
-    private WebElement Calendar_Week;
+    private WebElement calendarWeek;
 
     @FindBy(xpath = "//*[@id=\"range\"]/li[3]/a")
-    private WebElement Calendar_Month;
+    private WebElement calendarMonth;
 
     @FindBy(xpath = "//*[@id=\"range\"]/li[4]/a")
-    private WebElement Calendar_Year;
+    private WebElement calendarYear;
 
     public AdminHomePage(WebDriver driver) {
         super(driver);
     }
 
-    public WebElement getDashboard() {
-        return Dashboard;
-    }
-
     public WebElement getSettings() {
-        return Settings;
+        return settings;
     }
 
-    public WebElement getViewMore_TotalOrders() {
-        return ViewMore_TotalOrders;
+    public WebElement getViewMoreTotalOrders() {
+        return viewMoreTotalOrders;
     }
 
-    public WebElement getViewMore_TotalSales() {
-        return ViewMore_TotalSales;
+    public WebElement getViewMoreTotalSales() {
+        return viewMoreTotalSales;
     }
 
-    public WebElement getViewMore_TotalCustomers() {
-        return ViewMore_TotalCustomers;
+    public WebElement getViewMoreTotalCustomers() {
+        return viewMoreTotalCustomers;
     }
 
-    public WebElement getViewMore_PeopleOnline() {
-        return ViewMore_PeopleOnline;
+    public WebElement getViewMorePeopleOnline() {
+        return viewMorePeopleOnline;
     }
 
-    public WebElement getWorldMap_Zoomin() {
-        return WorldMap_Zoomin;
+    public WebElement getWorldMapZoomin() {
+        return worldMapZoomin;
     }
 
-    public WebElement getWordlMap_Zoomout() {
-        return WordlMap_Zoomout;
+    public WebElement getWorldMapZoomout() {
+        return worldMapZoomout;
     }
 
-    public WebElement getCalendar_SalesAnalytics() {
-        return Calendar_SalesAnalytics;
+    public WebElement getCalendarToday() {
+        return calendarToday;
     }
 
-    public WebElement getCalendar_Today() {
-        return Calendar_Today;
+    public WebElement getCalendarWeek() {
+        return calendarWeek;
     }
 
-    public WebElement getCalendar_Week() {
-        return Calendar_Week;
+    public WebElement getCalendarMonth() {
+        return calendarMonth;
     }
 
-    public WebElement getCalendar_Month() {
-        return Calendar_Month;
+    public WebElement getCalendarYear() {
+        return calendarYear;
     }
 
-    public WebElement getCalendar_Year() {
-        return Calendar_Year;
+    public WebElement getCalendarMainButton() {
+        return calendarMainButton;
     }
 }
