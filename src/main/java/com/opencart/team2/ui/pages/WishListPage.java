@@ -1,5 +1,5 @@
 package com.opencart.team2.ui.pages;
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -69,8 +69,8 @@ public class WishListPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"column-right\"]/div/a[13]")
     private WebElement logOut;
 
-    public WishListPage(WebDriver driver) {
-        super(driver);
+    public WishListPage() {
+        super();
     }
 
     public WebElement getProductName(int xpath) {

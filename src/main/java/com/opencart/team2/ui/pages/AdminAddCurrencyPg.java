@@ -1,15 +1,11 @@
 package com.opencart.team2.ui.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 import java.util.List;
 
 public class AdminAddCurrencyPg extends BasePage {
-
-    public AdminAddCurrencyPg (WebDriver driver) {
-        super(driver);
-    }
 
     @FindBy(xpath = "//*[@id=\"input-title\"]")
     private WebElement CurrencyTitleField;
@@ -43,6 +39,10 @@ public class AdminAddCurrencyPg extends BasePage {
 
     @FindBy(xpath = "//*[@id=\"content\"]/div[1]/div/ul/li[2]/a")
     private WebElement AdminCurrenciesPageButton;
+
+    public AdminAddCurrencyPg () {
+        super();
+    }
 
     public WebElement getCurrencyTitleField() {
         return CurrencyTitleField;

@@ -1,5 +1,5 @@
 package com.opencart.team2.ui.pages;
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -33,8 +33,8 @@ public class AdminAddClassesPage extends BasePage {
     @FindBy (xpath = "//*[@id=\"tax-rule-row0\"]/td[4]/button/i")
     private WebElement removeRateTaxRates;
 
-    public AdminAddClassesPage(WebDriver driver) {
-        super(driver);
+    public AdminAddClassesPage() {
+        super();
     }
 
     public WebElement getSaveAdd() {return saveAdd;}
