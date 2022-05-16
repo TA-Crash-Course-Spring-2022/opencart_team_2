@@ -1,6 +1,5 @@
 package com.opencart.team2.ui.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -60,8 +59,8 @@ public class AdminTaxRatesPage extends BasePage {
     private List<WebElement> editButton;
 
 
-    public AdminTaxRatesPage(WebDriver driver) {
-        super(driver);
+    public AdminTaxRatesPage() {
+        super();
     }
 
     public WebElement getAddNewButton() {
@@ -99,6 +98,8 @@ public class AdminTaxRatesPage extends BasePage {
     public WebElement getDateModifiedButton() {
         return dateModifiedButton;
     }
+
+    public List<WebElement> getTaxName(){return taxName; }
 
     public WebElement getCheckbox(int id) {
         return checkbox.get(id);
