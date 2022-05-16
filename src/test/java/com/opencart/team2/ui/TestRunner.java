@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class TestRunner {
     protected WebDriver driver;
-    
+
     @BeforeSuite
     public void beforeSuite(){
         Driver.downloadWebDriver();
