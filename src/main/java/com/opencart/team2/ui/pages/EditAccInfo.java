@@ -1,15 +1,9 @@
 package com.opencart.team2.ui.pages;
 
-import java.util.List;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class EditAccInfo extends BasePage {
-
-    public EditAccInfo (WebDriver driver) {
-        super(driver);
-    }
 
     @FindBy(xpath = "//*[@id=\"input-username\"]")
     private WebElement UsernameField;
@@ -46,6 +40,10 @@ public class EditAccInfo extends BasePage {
 
     @FindBy(xpath = "//*[@id=\"content\"]/div[1]/div/ul/li[2]/a")
     private WebElement ProfileButton;
+
+    public EditAccInfo () {
+        super();
+    }
 
     public WebElement getUsernameField() {
         return UsernameField;

@@ -1,13 +1,12 @@
 package com.opencart.team2.ui.business;
 
 import com.opencart.team2.ui.pages.CheckoutPage;
-import org.openqa.selenium.WebDriver;
 
 public class CheckoutBL {
     private CheckoutPage checkoutPage;
 
-    public CheckoutBL(WebDriver driver) {
-        checkoutPage = new CheckoutPage(driver);
+    public CheckoutBL() {
+        checkoutPage = new CheckoutPage();
     }
 
     public void firstNameButton() {

@@ -1,6 +1,5 @@
 package com.opencart.team2.ui.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -27,8 +26,8 @@ public class ComparePage extends BasePage {
     @FindBy (xpath = "//div[@id='content']//table//tbody//tr//td//a[contains(@href,'product/compare')]")
     private List <WebElement> productRemove;
 
-    public ComparePage(WebDriver driver) {
-        super(driver);
+    public ComparePage() {
+        super();
     }
 
     public WebElement getProductName(int xpath){
