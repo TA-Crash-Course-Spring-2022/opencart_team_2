@@ -1,5 +1,5 @@
 package com.opencart.team2.ui.pages;
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -29,8 +29,8 @@ public class AdminEditCurrencyPage extends BasePage{
     @FindBy (xpath = "//*[@id=\"input-status\"]")
     private WebElement inputStatus;
 
-    public AdminEditCurrencyPage(WebDriver driver) {
-        super(driver);
+    public AdminEditCurrencyPage() {
+        super();
     }
 
     public WebElement getSave() {

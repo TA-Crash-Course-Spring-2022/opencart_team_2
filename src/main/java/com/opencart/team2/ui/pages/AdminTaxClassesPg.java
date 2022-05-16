@@ -1,16 +1,11 @@
 package com.opencart.team2.ui.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
 public class AdminTaxClassesPg extends BasePage {
-
-    public AdminTaxClassesPg(WebDriver driver) {
-        super(driver);
-    }
 
     @FindBy(xpath = "//*[@id=\"content\"]/div[1]/div/div/a")
     private WebElement AddNewButton;
@@ -33,6 +28,9 @@ public class AdminTaxClassesPg extends BasePage {
     @FindBy(xpath = "//div[@class='panel-body']//tbody//input[@name='selected[]']")
     private List<WebElement> TicksButtons;
 
+    public AdminTaxClassesPg() {
+        super();
+    }
 
     public WebElement getAddNewButton() {
         return AddNewButton;

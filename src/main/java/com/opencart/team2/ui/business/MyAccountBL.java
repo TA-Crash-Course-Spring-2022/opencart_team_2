@@ -1,13 +1,12 @@
 package com.opencart.team2.ui.business;
 
 import com.opencart.team2.ui.pages.MyAccountPage;
-import org.openqa.selenium.WebDriver;
 
 public class MyAccountBL {
     private MyAccountPage myAccountPage;
 
-    public MyAccountBL(WebDriver driver) {
-        myAccountPage = new MyAccountPage(driver);
+    public MyAccountBL() {
+        myAccountPage = new MyAccountPage();
     }
 
     public void editButton() {

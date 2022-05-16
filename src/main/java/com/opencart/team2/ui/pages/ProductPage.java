@@ -1,15 +1,11 @@
 package com.opencart.team2.ui.pages;
 
-import java.util.List;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ProductPage extends BasePage {
+import java.util.List;
 
-    public ProductPage (WebDriver driver) {
-        super(driver);
-    }
+public class ProductPage extends BasePage {
 
     @FindBy(xpath = "//*[@id='content']/div[1]/div[2]/div[1]/button[1]")
     private WebElement addToWishList;
@@ -53,6 +49,9 @@ public class ProductPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"u_0_1_97\"]/button/span")
     private WebElement likeButton;
 
+    public ProductPage () {
+        super();
+    }
 
     public WebElement getAddToWishList() {
         return addToWishList;

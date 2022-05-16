@@ -1,14 +1,9 @@
 package com.opencart.team2.ui.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class AdminLoginPg extends BasePage {
-
-    public AdminLoginPg (WebDriver driver) {
-        super(driver);
-    }
 
     @FindBy(xpath = "//*[@id='input-username']")
     private WebElement UsernameField;
@@ -30,6 +25,10 @@ public class AdminLoginPg extends BasePage {
 
     @FindBy(xpath = "//*[@id=\"content\"]/div/div/div/div/div[2]/form/div[2]/a")
     private WebElement CancelButtonFP;
+
+    public AdminLoginPg () {
+        super();
+    }
 
     public WebElement getUsernameField() {
         return UsernameField;
