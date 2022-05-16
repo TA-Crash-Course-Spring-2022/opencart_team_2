@@ -130,4 +130,8 @@ public class ShoppingCartBL {
         shoppingCartPage.getCheckoutButton().click();
         return this;
     }
+
+    public int getSizeText(){
+         return shoppingCartPage.getProductName().size();
+    }
 }

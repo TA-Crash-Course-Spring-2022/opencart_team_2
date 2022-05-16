@@ -96,6 +96,8 @@ public class ShoppingCartPage extends BasePage {
         return productName.get(id);
     }
 
+    public List<WebElement> getProductName() {return productName; }
+
     public WebElement getModel(int id) {
         return model.get(id);
     }
