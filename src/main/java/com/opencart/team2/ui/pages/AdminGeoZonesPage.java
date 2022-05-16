@@ -1,6 +1,5 @@
 package com.opencart.team2.ui.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -35,8 +34,8 @@ public class AdminGeoZonesPage extends BasePage {
     @FindBy(xpath = "//a[@data-original-title='Edit']")
     private List<WebElement> editButton;
 
-    public AdminGeoZonesPage(WebDriver driver) {
-        super(driver);
+    public AdminGeoZonesPage() {
+        super();
     }
 
     public WebElement getAddNewButton() {
@@ -62,6 +61,8 @@ public class AdminGeoZonesPage extends BasePage {
     public WebElement getCheckbox(int id) {
         return checkbox.get(id);
     }
+
+    public List<WebElement> getGeoZoneName(){return geoZoneName; }
 
     public WebElement getGeoZoneName(int id) {
         return geoZoneName.get(id);

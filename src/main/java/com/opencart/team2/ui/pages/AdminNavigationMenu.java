@@ -2,13 +2,12 @@ package com.opencart.team2.ui.pages;
 
 import com.opencart.team2.ui.constants.MenuCategories;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class AdminNavigationMenu extends BasePage {
 
-    public AdminNavigationMenu(WebDriver driver) {
-        super(driver);
+    public AdminNavigationMenu() {
+        super();
     }
 
     public WebElement getMenuCategory(MenuCategories name) {

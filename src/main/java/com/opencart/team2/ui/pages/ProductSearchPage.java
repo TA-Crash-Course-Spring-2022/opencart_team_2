@@ -1,8 +1,8 @@
 package com.opencart.team2.ui.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -38,7 +38,6 @@ public class ProductSearchPage extends BasePage {
     @FindBy(id = "input-limit")
     private WebElement showSelectButton;
 
-    //!!!!!! окремо
     @FindBy(xpath = "//div[@class='image']//a[contains(@href, 'product/product&product_id')]")
     private List<WebElement> productPhotoButtons;
 
@@ -55,16 +54,16 @@ public class ProductSearchPage extends BasePage {
     private List<WebElement> compareButton;
 
 
-    public ProductSearchPage(WebDriver driver) {
-        super(driver);
+    public ProductSearchPage() {
+        super();
     }
 
     public WebElement getSearchInput() {
         return searchInput;
     }
 
-    public WebElement getCategorySelectButton() {
-        return categorySelectButton;
+    public Select getCategorySelectButton() {
+        return new Select(categorySelectButton);
     }
 
     public WebElement getCheckboxSubcategories() {
@@ -91,16 +90,13 @@ public class ProductSearchPage extends BasePage {
         return productCompareButton;
     }
 
-    public WebElement getSortBySelectButton() {
-        return sortBySelectButton;
+    public Select getSortBySelectButton() {
+        return new Select(sortBySelectButton);
     }
 
-    public WebElement getShowSelectButton() {
-        return showSelectButton;
+    public Select getShowSelectButton() {
+        return new Select(showSelectButton);
     }
-
-    //якшо повертати ліст елем
-    //public List<WebElement> getProductButtons() {return productButtons; }
 
     public WebElement getProductPhotoButtons(int id) {
         return productPhotoButtons.get(id);

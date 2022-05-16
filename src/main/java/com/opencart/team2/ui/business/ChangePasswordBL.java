@@ -1,14 +1,13 @@
 package com.opencart.team2.ui.business;
 
 import com.opencart.team2.ui.pages.ChangePasswordPage;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class ChangePasswordBL {
     private ChangePasswordPage changePasswordPage;
 
-    public ChangePasswordBL(WebDriver driver) {
-        changePasswordPage = new ChangePasswordPage(driver);
+    public ChangePasswordBL() {
+        changePasswordPage = new ChangePasswordPage();
     }
 
     public ChangePasswordBL inputPassword(String password) {
