@@ -56,9 +56,15 @@ public class ProductSearchPage extends BasePage {
     @FindBy(id = "top")
     private WebElement productSearchPageToHeader;
 
+    @FindBy(className = "alert")
+    private WebElement success;
 
     public ProductSearchPage() {
         super();
+    }
+
+    public WebElement getSuccess() {
+        return success;
     }
 
     public WebElement getProductSearchPageToHeader() {

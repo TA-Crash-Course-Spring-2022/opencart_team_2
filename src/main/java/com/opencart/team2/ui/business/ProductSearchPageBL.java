@@ -100,5 +100,10 @@ public class ProductSearchPageBL {
     public HeaderPageBL productSearchPageToHeader () {
         productSearchPage.getProductSearchPageToHeader();
         return new HeaderPageBL();
+
+    }
+
+    public String getSuccess() {
+        return productSearchPage.getSuccess().getText();
     }
 }

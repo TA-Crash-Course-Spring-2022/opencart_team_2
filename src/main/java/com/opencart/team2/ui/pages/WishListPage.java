@@ -77,6 +77,8 @@ public class WishListPage extends BasePage {
         return productName.get(xpath);
     }
 
+    public List<WebElement> getProductStock() {return productStock; }
+
     public WebElement getProductImage(int xpath) {return productImage.get(xpath);}
 
     public WebElement getProductModel(int xpath) {return productModel.get(xpath);}
