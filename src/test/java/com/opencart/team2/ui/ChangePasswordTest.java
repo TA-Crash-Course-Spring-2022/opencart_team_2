@@ -1,89 +1,42 @@
 package com.opencart.team2.ui;
 
 import com.opencart.team2.ui.business.ChangePasswordBL;
-import org.openqa.selenium.By;
+import com.opencart.team2.ui.business.HeaderPageBL;
+import com.opencart.team2.ui.business.MyAccountBL;
+import com.opencart.team2.ui.navigation.Navigation;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ChangePasswordTest extends TestRunner{
 
     @Test(description = "change password")
-    public void changePassword() {
-        driver.get("http://localhost/opencart/upload/index.php");
-        driver.findElement(By.xpath("//div[@class='container']//a[contains(@href, 'account/account')]")).click();
-        driver.findElement(By.xpath("//div[@class='container']//a[contains(@href, 'account/login')]")).click();
+    public void addWishList() {
 
-        String inputLogin= "1@gmail.com";
-        driver.findElement(By.id("input-email")).sendKeys(inputLogin);
-        String oldPass= "1111";
-        driver.findElement(By.id("input-password")).sendKeys(oldPass);
+        String inputEmail= "1@gmail.com";
+        String inputPassword= "1111";
+        String newPass="qwerty";
 
-        driver.findElement(By.xpath("//input[contains(@value, 'Login')]")).click();
-
-
-        driver.findElement(By.xpath("//div[@class='row']//a[contains(@href, 'account/password')]")).click();
-
-        String newPass= "1234";
-        new ChangePasswordBL().inputPassword(newPass)
-                .inputPasswordConfirm(newPass)
+        new Navigation().navigateToMainPage();
+        new HeaderPageBL()
+                .selectLogin()
+                .emailLoginInput(inputEmail)
+                .passwordLoginInput(inputPassword)
+                .continueLoginButton()
+                .changePasswordButton()
+                .inputPassword(newPass)
+                .inputPasswordConfirm(newPass).clickContinueButton();
+        Assert.assertEquals(new MyAccountBL().getAlert(), "Success: Your password has been successfully updated.");
+        new HeaderPageBL()
+                .clickAccountSelectButton()
+                .clickAccountLogoutButton()
+                .selectLogin()
+                .emailLoginInput(inputEmail)
+                .passwordLoginInput(newPass)
+                .continueLoginButton()
+                .changePasswordButton()
+                .inputPassword(inputPassword)
+                .inputPasswordConfirm(inputPassword)
                 .clickContinueButton();
-
-        driver.findElement(By.xpath("//div[@class='container']//a[contains(@href, 'account/account')]")).click();
-        driver.findElement(By.xpath("//div[@class='container']//a[contains(@href, 'account/logout')]")).click();
-
-        driver.findElement(By.xpath("//div[@class='container']//a[contains(@href, 'account/account')]")).click();
-        driver.findElement(By.xpath("//div[@class='container']//a[contains(@href, 'account/login')]")).click();
-
-
-        driver.findElement(By.id("input-email")).sendKeys(inputLogin);
-        driver.findElement(By.id("input-password")).sendKeys(newPass);
-
-        driver.findElement(By.xpath("//input[contains(@value, 'Login')]")).click();
-
-        driver.findElement(By.xpath("//div[@class='row']//a[contains(@href, 'account/password')]")).click();
-
-
-        new ChangePasswordBL().inputPassword(oldPass)
-                .inputPasswordConfirm(oldPass)
-                .clickContinueButton();
-
-    }
-
-    @Test(description = "change password negative")
-    public void changePasswordNegativeCase() {
-        driver.get("http://localhost/opencart/upload/index.php?route=common/home");
-        driver.findElement(By.xpath("//div[@class='container']//a[contains(@href, 'account/account')]")).click();
-        driver.findElement(By.xpath("//div[@class='container']//a[contains(@href, 'account/login')]")).click();
-
-        String inputLogin= "1@gmail.com";
-        driver.findElement(By.id("input-email")).sendKeys(inputLogin);
-        String oldPass= "1111";
-        driver.findElement(By.id("input-password")).sendKeys(oldPass);
-
-        driver.findElement(By.xpath("//input[contains(@value, 'Login')]")).click();
-
-
-        driver.findElement(By.xpath("//div[@class='row']//a[contains(@href, 'account/password')]")).click();
-
-
-        new ChangePasswordBL().inputPassword("abcd")
-                .inputPasswordConfirm("zxyv")
-                .clickContinueButton();
-
-        driver.findElement(By.xpath("//div[@class='container']//a[contains(@href, 'account/account')]")).click();
-        driver.findElement(By.xpath("//div[@class='container']//a[contains(@href, 'account/logout')]")).click();
-
-        driver.findElement(By.xpath("//div[@class='container']//a[contains(@href, 'account/account')]")).click();
-        driver.findElement(By.xpath("//div[@class='container']//a[contains(@href, 'account/login')]")).click();
-
-
-        driver.findElement(By.id("input-email")).sendKeys(inputLogin);
-        driver.findElement(By.id("input-password")).sendKeys(oldPass);
-
-        driver.findElement(By.xpath("//input[contains(@value, 'Login')]")).click();
-        //to do account page check
-
-
-
-
+        Assert.assertEquals(new MyAccountBL().getAlert(), "Success: Your password has been successfully updated.");
     }
 }

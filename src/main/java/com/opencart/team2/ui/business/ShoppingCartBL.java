@@ -134,4 +134,9 @@ public class ShoppingCartBL {
     public int getSizeText(){
          return shoppingCartPage.getProductName().size();
     }
+
+    public HeaderPageBL shoppingCartPageToHeader () {
+        shoppingCartPage.getShoppingCartPageToHeader();
+        return new HeaderPageBL();
+    }
 }

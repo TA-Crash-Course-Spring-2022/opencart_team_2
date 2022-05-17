@@ -96,4 +96,9 @@ public class ProductSearchPageBL {
         productSearchPage.getCompareButton(id).click();
         return this;
     }
+
+    public HeaderPageBL productSearchPageToHeader () {
+        productSearchPage.getProductSearchPageToHeader();
+        return new HeaderPageBL();
+    }
 }

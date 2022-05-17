@@ -37,16 +37,24 @@ public class HeaderPageBL {
         return this;
     }
 
-    public void clickAccountMyAccountButton(){
+    public MyAccountBL clickAccountMyAccountButton(){
         headerPage.getAccountMyAccountButton().click();
+        return new MyAccountBL();
     }
 
-    public void clickAccountLoginButton(){
+    public SignUpPageBL clickAccountLoginButton(){
         headerPage.getAccountLoginButton().click();
+        return new SignUpPageBL();
     }
 
-    public void selectLogin(){
+    public SignUpPageBL selectLogin(){
         clickAccountSelectButton().clickAccountLoginButton();
+        return new SignUpPageBL();
+    }
+
+    public SignUpPageBL selectLogout(){
+        clickAccountSelectButton().clickAccountLogoutButton();
+        return new SignUpPageBL();
     }
 
     public void clickAccountRegisterButton(){
@@ -65,8 +73,14 @@ public class HeaderPageBL {
         headerPage.getAccountDownloadsButton().click();
     }
 
-    public void clickWishListButton() {
+    public HeaderPageBL clickAccountLogoutButton(){
+        headerPage.getAccountLogoutButton().click();
+        return this;
+    }
+
+    public WishListPageBL clickWishListButton() {
         headerPage.getWishListButton().click();
+        return new WishListPageBL();
     }
 
     public ShoppingCartBL clickShoppingCartButton() {
@@ -74,7 +88,8 @@ public class HeaderPageBL {
         return new ShoppingCartBL();
     }
 
-    public void clickCheckoutButton() {
+    public CheckoutBL clickCheckoutButton() {
         headerPage.getCheckoutButton().click();
+        return new CheckoutBL();
     }
 }

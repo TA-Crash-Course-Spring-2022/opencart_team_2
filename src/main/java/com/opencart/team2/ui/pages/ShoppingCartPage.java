@@ -83,9 +83,15 @@ public class ShoppingCartPage extends BasePage {
     @FindBy(xpath = "//div[@class='buttons clearfix']//a[contains(@href, 'common/home')]")
     private WebElement continueShoppingButton;
 
+    @FindBy(id = "top")
+    private WebElement shoppingCartPageToHeader;
 
     public ShoppingCartPage() {
         super();
+    }
+
+    public WebElement getShoppingCartPageToHeader() {
+        return shoppingCartPageToHeader;
     }
 
     public WebElement getImage(int id) {

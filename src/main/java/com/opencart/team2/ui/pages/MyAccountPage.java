@@ -41,8 +41,22 @@ public class MyAccountPage extends BasePage {
     @FindBy(xpath = "//div[@class='row']//ul[@class='list-unstyled']//a[contains(@href, 'account/newsletter')]")
     private WebElement newsletterButton;
 
+    @FindBy(id = "top")
+    private WebElement myAccountToHeader;
+
+    @FindBy(className = "alert")
+    private WebElement alert;
+
     public MyAccountPage() {
         super();
+    }
+
+    public WebElement getMyAccountToHeader() {
+        return myAccountToHeader;
+    }
+
+    public WebElement getAlert() {
+        return alert;
     }
 
     public WebElement getEditButton() {
