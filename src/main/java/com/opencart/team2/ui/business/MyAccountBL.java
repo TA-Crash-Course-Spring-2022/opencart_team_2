@@ -9,13 +9,18 @@ public class MyAccountBL {
         myAccountPage = new MyAccountPage();
     }
 
-    public void editButton() {
-
+    public EditAccountInfoPageBL editButton() {
         myAccountPage.getEditButton().click();
+        return new EditAccountInfoPageBL();
     }
 
-    public void changePasswordButton() {
+    public ChangePasswordBL changePasswordButton() {
         myAccountPage.getChangePasswordButton().click();
+        return new ChangePasswordBL();
+    }
+
+    public String getAlert() {
+        return myAccountPage.getAlert().getText();
     }
 
     public void modifyAddressButton() {
@@ -58,4 +63,8 @@ public class MyAccountBL {
         myAccountPage.getNewsletterButton();
     }
 
+    public HeaderPageBL myAccountToHeader () {
+        myAccountPage.getMyAccountToHeader();
+        return new HeaderPageBL();
+    }
 }

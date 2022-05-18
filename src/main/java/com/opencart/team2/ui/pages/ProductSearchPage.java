@@ -53,9 +53,22 @@ public class ProductSearchPage extends BasePage {
     @FindBy(xpath = "//div[@class='button-group']//button[contains(@onclick,'compare.add')]")
     private List<WebElement> compareButton;
 
+    @FindBy(id = "top")
+    private WebElement productSearchPageToHeader;
+
+    @FindBy(className = "alert")
+    private WebElement success;
 
     public ProductSearchPage() {
         super();
+    }
+
+    public WebElement getSuccess() {
+        return success;
+    }
+
+    public WebElement getProductSearchPageToHeader() {
+        return productSearchPageToHeader;
     }
 
     public WebElement getSearchInput() {

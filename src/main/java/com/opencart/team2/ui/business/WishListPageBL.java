@@ -9,11 +9,23 @@ public class WishListPageBL {
         wishListPage = new WishListPage();
     }
 
-    public void productName(int id) {wishListPage.getProductName(id).click();}
+    public void productName(int id) {
+        wishListPage.getProductName(id).click();
+    }
 
-    public void addToCardButton(int id) {wishListPage.getProductAddToCard(id).click();}
+    public int getSizeText() {
+        return wishListPage.getProductStock().size();
+    }
 
-    public void removeButton(int id) {wishListPage.getProductRemove(id).click();}
+    public void addToCardButton(int id) {
+        wishListPage.getProductAddToCard(id).click();
+    }
 
-    public void continueButton() {wishListPage.getContinue().click();}
+    public void removeButton(int id) {
+        wishListPage.getProductRemove(id).click();
+    }
+
+    public void continueButton() {
+        wishListPage.getContinue().click();
+    }
 }

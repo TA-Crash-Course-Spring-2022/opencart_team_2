@@ -34,11 +34,13 @@ public class ChangePasswordBL {
         return this;
     }
 
-    public void clickContinueButton() {
+    public MyAccountBL clickContinueButton() {
         changePasswordPage.getContinueButton().click();
+        return new MyAccountBL();
     }
 
-    public void clickBackButton() {
+    public MyAccountBL clickBackButton() {
         changePasswordPage.getBackButton().click();
+        return new MyAccountBL();
     }
 }

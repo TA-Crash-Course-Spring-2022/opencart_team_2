@@ -15,8 +15,9 @@ public class SearchFieldHeaderBL {
             return this;
         }
 
-        public void confirmSearch () {
-            searchFieldHeaderPG.getEnter().click();
+        public ProductSearchPageBL confirmSearch () {
+            searchFieldHeader.getEnter().click();
+            return new ProductSearchPageBL();
         }
 
 }
