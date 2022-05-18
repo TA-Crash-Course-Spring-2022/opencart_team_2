@@ -4,7 +4,7 @@ import com.opencart.team2.ui.business.ChangePasswordBL;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-public class ChangePassword  extends TestRunner {
+public class ChangePasswordNegativeTest extends TestRunner {
 
     @Test
     public void changePasswordNegativeCase() {

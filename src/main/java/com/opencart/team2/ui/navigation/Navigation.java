@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class Navigation {
 
     private static WebDriver driver;
-    private final String localMainPageUrl="localhost/opencart/upload/";
+    private final String localMainPageUrl="http://localhost/opencart/upload/";
     private final String localAdminMainPageUrl="http://localhost/opencart/upload/admin/";
 
     public Navigation(){ driver = Driver.DRIVERS.get();}

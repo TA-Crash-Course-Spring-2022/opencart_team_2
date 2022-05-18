@@ -3,9 +3,9 @@ package com.opencart.team2.ui.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class SearchFieldHeader extends BasePage {
+public class SearchFieldHeaderPG extends BasePage {
 
-    public SearchFieldHeader() {
+    public SearchFieldHeaderPG() {
         super();
     }
 

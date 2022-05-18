@@ -10,15 +10,15 @@ public class AdminLoginPgBL {
         adminLoginPg = new AdminLoginPg();
     }
 
-    public AdminLoginPgBL UsernameField (String username) {
+    public AdminLoginPgBL UsernameField (String usernameAdmin) {
         adminLoginPg.getUsernameField().clear();
-        adminLoginPg.getUsernameField().sendKeys(username);
+        adminLoginPg.getUsernameField().sendKeys(usernameAdmin);
         return this;
     }
 
-    public AdminLoginPgBL PasswordField (String password) {
+    public AdminLoginPgBL PasswordField (String passwordAdmin) {
         adminLoginPg.getPasswordField().clear();
-        adminLoginPg.getPasswordField().sendKeys(password);
+        adminLoginPg.getPasswordField().sendKeys(passwordAdmin);
         return this;
     }
 

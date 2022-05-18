@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
-public class AdminEditTaxClasses extends BasePage{
+public class AdminEditTaxClassesPG extends BasePage{
 
     @FindBy (xpath = "//*[@id=\"content\"]/div[1]/div/div/button/i")
     private WebElement saveEdit;
@@ -33,7 +33,7 @@ public class AdminEditTaxClasses extends BasePage{
     @FindBy (xpath = "//*[@id=\"tax-rule\"]/tfoot/tr/td[2]/button")
     private WebElement addRule;
 
-    public AdminEditTaxClasses() {
+    public AdminEditTaxClassesPG() {
         super();
     }
 

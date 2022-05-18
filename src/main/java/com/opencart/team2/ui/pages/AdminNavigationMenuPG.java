@@ -4,9 +4,9 @@ import com.opencart.team2.ui.constants.MenuCategories;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class AdminNavigationMenu extends BasePage {
+public class AdminNavigationMenuPG extends BasePage {
 
-    public AdminNavigationMenu() {
+    public AdminNavigationMenuPG() {
         super();
     }
 
