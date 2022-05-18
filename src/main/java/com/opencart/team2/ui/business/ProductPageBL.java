@@ -14,8 +14,9 @@ public class ProductPageBL {
         productPage.getAddToWishList().click();
     }
 
-    public  void CompareThisProduct () {
+    public ProductPageBL CompareThisProduct () {
         productPage.getCompareThisProduct().click();
+        return this;
     }
 
     public void addToCart () {

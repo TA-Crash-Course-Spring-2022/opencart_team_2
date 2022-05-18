@@ -1,64 +1,64 @@
 package com.opencart.team2.ui.business;
 
-import com.opencart.team2.ui.pages.AdminEditTaxClasses;
+import com.opencart.team2.ui.pages.AdminEditTaxClassesPG;
 
 public class AdminEditTaxClassesBL {
-    private AdminEditTaxClasses adminEditTaxClasses;
+    private AdminEditTaxClassesPG adminEditTaxClassesPG;
 
     public AdminEditTaxClassesBL () {
-        adminEditTaxClasses = new AdminEditTaxClasses();
+        adminEditTaxClassesPG = new AdminEditTaxClassesPG();
     }
 
     public void saveEditClass() {
-        adminEditTaxClasses.getSaveEdit().click();
+        adminEditTaxClassesPG.getSaveEdit().click();
     }
 
     public void cancelEdit() {
-        adminEditTaxClasses.getCancelEdit().click();
+        adminEditTaxClassesPG.getCancelEdit().click();
     }
 
     public AdminEditTaxClassesBL inputTaxClassTitle (String title) {
-        adminEditTaxClasses.getTaxClassTitle().clear();
-        adminEditTaxClasses.getTaxClassTitle().sendKeys(title);
+        adminEditTaxClassesPG.getTaxClassTitle().clear();
+        adminEditTaxClassesPG.getTaxClassTitle().sendKeys(title);
         return this;
     }
 
     public AdminEditTaxClassesBL inputDescription (String description) {
-        adminEditTaxClasses.getTaxClassDescription().clear();
-        adminEditTaxClasses.getTaxClassDescription().sendKeys(description);
+        adminEditTaxClassesPG.getTaxClassDescription().clear();
+        adminEditTaxClassesPG.getTaxClassDescription().sendKeys(description);
         return this;
     }
 
     public AdminEditTaxClassesBL selectTaxRate (String value) {
-        adminEditTaxClasses.getTaxRate().selectByValue(value);
+        adminEditTaxClassesPG.getTaxRate().selectByValue(value);
         return this;
     }
 
     public String getTaxRate() {
-        return adminEditTaxClasses.getTaxRate().getFirstSelectedOption().getText();
+        return adminEditTaxClassesPG.getTaxRate().getFirstSelectedOption().getText();
     }
 
     public AdminEditTaxClassesBL selectTaxBaseOn (String value) {
-        adminEditTaxClasses.getTaxBaseOn().selectByValue(value);
+        adminEditTaxClassesPG.getTaxBaseOn().selectByValue(value);
         return this;
     }
     public String getTaxBaseOn() {
         return
-                adminEditTaxClasses.getTaxBaseOn().getFirstSelectedOption().getText();
+                adminEditTaxClassesPG.getTaxBaseOn().getFirstSelectedOption().getText();
     }
 
     public AdminEditTaxClassesBL inputPriority (String priority) {
-        adminEditTaxClasses.getPriority().clear();
-        adminEditTaxClasses.getPriority().sendKeys(priority);
+        adminEditTaxClassesPG.getPriority().clear();
+        adminEditTaxClassesPG.getPriority().sendKeys(priority);
         return this;
     }
 
     public void removeButton() {
-        adminEditTaxClasses.getRemoveButton().click();
+        adminEditTaxClassesPG.getRemoveButton().click();
     }
 
     public void addRuleButton() {
-        adminEditTaxClasses.getAddRule().click();
+        adminEditTaxClassesPG.getAddRule().click();
     }
 }
 
