@@ -1,17 +1,17 @@
 package com.opencart.team2.ui.business;
 
-import com.opencart.team2.ui.pages.SearchFieldHeader;
+import com.opencart.team2.ui.pages.SearchFieldHeaderPG;
 
 public class SearchFieldHeaderBL {
-    private SearchFieldHeader searchFieldHeader;
+    private SearchFieldHeaderPG searchFieldHeaderPG;
 
     public SearchFieldHeaderBL () {
-            searchFieldHeader = new SearchFieldHeader();
+            searchFieldHeaderPG = new SearchFieldHeaderPG();
         }
 
     public SearchFieldHeaderBL inputProduct (String productName) {
-            searchFieldHeader.getSearchLine().clear();
-            searchFieldHeader.getSearchLine().sendKeys(productName);
+            searchFieldHeaderPG.getSearchLine().clear();
+            searchFieldHeaderPG.getSearchLine().sendKeys(productName);
             return this;
         }
 
