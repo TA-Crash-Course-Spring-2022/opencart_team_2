@@ -18,12 +18,11 @@ public class ComparePrByPgTest extends TestRunner {
 
         String email = "tester132q@gmail.com";
         String userPassword = "test";
-        UserLoginPageBL userLoginPageBL = new UserLoginPageBL();
-        userLoginPageBL.MyAccountMainButton();
-        userLoginPageBL.UserLoginMainButton();
-        userLoginPageBL.UserEmailField(email);
-        userLoginPageBL.UserPasswordField(userPassword);
-        userLoginPageBL.UserLoginButton();
+        new UserLoginPageBL()
+                .MyAccountMainButton()
+                .UserLoginMainButton()
+                .UserEmailField(email)
+                .UserPasswordField(userPassword);
 
         new Navigation().navigateToMainPage();
 

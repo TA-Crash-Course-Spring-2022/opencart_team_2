@@ -6,9 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class AdminCurrencyBL {
     private AdminCurrencyPage adminCurrencyPage;
 
-    public AdminCurrencyBL(WebDriver driver) {
-        adminCurrencyPage = new AdminCurrencyPage(driver);
-    }
+    public AdminCurrencyBL() { adminCurrencyPage = new AdminCurrencyPage(); }
 
     public void checkboxButton() {
         adminCurrencyPage.getCheckboxButton().click();

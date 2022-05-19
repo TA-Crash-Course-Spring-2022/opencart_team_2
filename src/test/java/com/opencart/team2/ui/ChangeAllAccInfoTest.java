@@ -1,42 +1,39 @@
 package com.opencart.team2.ui;
 
 
-import com.opencart.team2.ui.business.AdminLoginPgBL;
-import com.opencart.team2.ui.business.AdminEditAccInfoBL;
+import com.opencart.team2.ui.business.*;
 import com.opencart.team2.ui.navigation.Navigation;
-import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ChangeAllAccInfoTest extends TestRunner {
 
     @Test
     public void Test() {
-        new Navigation().navigateToAdminMainPage();
+        new Navigation().navigateToMainPage();
 
-        String usernameAdmin = "admin";
-        String passwordAdmin = "admin";
-        AdminLoginPgBL adminLoginPgBL = new AdminLoginPgBL();
-        adminLoginPgBL.UsernameField(usernameAdmin);
-        adminLoginPgBL.PasswordField(passwordAdmin);
-        adminLoginPgBL.LoginButton();
+        String email = "tester132q@gmail.com";
+        String userPassword = "test";
+        new UserLoginPageBL()
+                .MyAccountMainButton()
+                .UserLoginMainButton()
+                .UserEmailField(email)
+                .UserPasswordField(userPassword);
 
-        driver.findElement(By.xpath("//*[@id=\"header\"]/div/ul/li[1]/a")).click();
-        driver.findElement(By.xpath("//*[@id=\"header\"]/div/ul/li[1]/ul/li[1]/a")).click();
+        String newFirstName = "Petro";
+        String newLastName = "LastPetro";
+        String newEmail = "newTester132q@gmail.com";
+        String newTelephone = "0112233445566";
 
-        String username = "NewAdmin";
-        String firstname = "Petro";
-        String lastname = "Petrik";
-        String email = "NewAdmin@gmail.com";
-        String newPassword = "newadmin";
-        String confirmMessage = "newConfirm";
+        new MyAccountBL().editButton();
 
-        AdminEditAccInfoBL editAccInfoBL = new AdminEditAccInfoBL();
-        editAccInfoBL.UsernameField(username);
-        editAccInfoBL.FirstNameField(firstname);
-        editAccInfoBL.LastNameField(lastname);
-        editAccInfoBL.EmailField(email);
-        editAccInfoBL.PasswordField(newPassword);
-        editAccInfoBL.ConfirmField(confirmMessage);
-        editAccInfoBL.SaveButton();
+        new EditAccountInfoPageBL()
+                .firstNameInput(newFirstName)
+                .lastNameInput(newLastName)
+                .emailInput(newEmail)
+                .telephoneInput(newTelephone)
+                .continueButton();
+
+        Assert.assertEquals(new MyAccountBL().getAlert(), "Success: Your account has been successfully updated.");
     }
 }

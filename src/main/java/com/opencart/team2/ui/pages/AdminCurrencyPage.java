@@ -31,9 +31,7 @@ public class AdminCurrencyPage extends BasePage {
     private WebElement edit3Button;
 
 
-    public AdminCurrencyPage(WebDriver driver) {
-        super(driver);
-    }
+    public AdminCurrencyPage() { super(); }
 
     public WebElement getCheckboxButton() {
         return checkboxButton;

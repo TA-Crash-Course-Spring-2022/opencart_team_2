@@ -1,12 +1,14 @@
 package com.opencart.team2.ui;
 
+import com.opencart.team2.ui.business.HomePageBL;
+import com.opencart.team2.ui.business.ProductSearchPageBL;
 import com.opencart.team2.ui.business.UserLoginPageBL;
 import com.opencart.team2.ui.business.SearchFieldHeaderBL;
 import com.opencart.team2.ui.navigation.Navigation;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SearchForProductTest extends TestRunner {
+public class AddProdCartBySearchTest extends TestRunner {
 
     @Test
     public void Test() {
@@ -21,11 +23,12 @@ public class SearchForProductTest extends TestRunner {
                 .UserPasswordField(userPassword);
 
         String productName = "Iphone";
-        new SearchFieldHeaderBL()
-        .inputProduct(productName)
-        .confirmSearch();
+        new SearchFieldHeaderBL().inputProduct(productName).confirmSearch();
 
-        int id = 0;
-        Assert.assertEquals(id, 0);
+
+       int id = 0;
+       new ProductSearchPageBL().clickAddToCart(0);
+
+        Assert.assertTrue(new ProductSearchPageBL().getSuccess().contains("Success: "));
     }
 }

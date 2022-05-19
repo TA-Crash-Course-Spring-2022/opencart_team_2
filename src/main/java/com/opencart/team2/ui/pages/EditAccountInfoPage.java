@@ -27,6 +27,7 @@ public class EditAccountInfoPage extends BasePage{
         super();
     }
 
+
     public WebElement getFirstNameInput() {
         return firstNameInput;
     }
