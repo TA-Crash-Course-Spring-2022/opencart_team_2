@@ -3,7 +3,7 @@ package com.opencart.team2.ui.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class EditAccInfoPG extends BasePage {
+public class EditAccInfoAdminPG extends BasePage {
 
     @FindBy(xpath = "//*[@id=\"input-username\"]")
     private WebElement UsernameField;
@@ -41,7 +41,7 @@ public class EditAccInfoPG extends BasePage {
     @FindBy(xpath = "//*[@id=\"content\"]/div[1]/div/ul/li[2]/a")
     private WebElement ProfileButton;
 
-    public EditAccInfoPG() {
+    public EditAccInfoAdminPG() {
         super();
     }
 

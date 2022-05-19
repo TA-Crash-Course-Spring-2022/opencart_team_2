@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class MyAccountPage extends BasePage {
 
-    @FindBy(xpath = "//div[@class='row']//ul[@class='list-unstyled']//a[contains(@href, 'account/edit')]")
+    @FindBy(xpath = "//*[@id=\"content\"]/ul[1]/li[1]/a")
     private WebElement editButton;
 
     @FindBy(xpath = "//div[@class='row']//ul[@class='list-unstyled']//a[contains(@href, 'account/password')]")

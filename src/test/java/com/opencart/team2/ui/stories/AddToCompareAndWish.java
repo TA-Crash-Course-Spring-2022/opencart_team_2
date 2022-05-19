@@ -7,20 +7,19 @@ import com.opencart.team2.ui.business.UserLoginPageBL;
 import com.opencart.team2.ui.navigation.Navigation;
 import org.testng.annotations.Test;
 
-public class OrderOneProdByProdPGasLU extends TestRunner {
+public class AddToCompareAndWish extends TestRunner {
 
     @Test
     public void Test() {
         new Navigation().navigateToMainPage();
 
-        //do so
         String email = "tester132q@gmail.com";
         String userPassword = "test";
         new UserLoginPageBL()
-        .MyAccountMainButton()
-        .UserLoginMainButton()
-        .UserEmailField(email)
-        .UserPasswordField(userPassword);
+                .MyAccountMainButton()
+                .UserLoginMainButton()
+                .UserEmailField(email)
+                .UserPasswordField(userPassword);
 
 
         new Navigation().navigateToMainPage();
@@ -39,6 +38,6 @@ public class OrderOneProdByProdPGasLU extends TestRunner {
         .CompareThisProduct()
         .addToWishList();
 
-
+        
     }
 }

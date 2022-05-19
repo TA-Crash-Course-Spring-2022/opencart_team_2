@@ -1,61 +1,61 @@
 package com.opencart.team2.ui.business;
 
-import com.opencart.team2.ui.pages.EditAccInfoPG;
+import com.opencart.team2.ui.pages.EditAccInfoAdminPG;
 
 public class AdminEditAccInfoBL {
 
-    private EditAccInfoPG editAccInfoPG;
+    private EditAccInfoAdminPG editAccInfoAdminPG;
 
     public AdminEditAccInfoBL() {
-        editAccInfoPG = new EditAccInfoPG();
+        editAccInfoAdminPG = new EditAccInfoAdminPG();
     }
 
     public AdminEditAccInfoBL UsernameField (String username) {
-        editAccInfoPG.getUsernameField().clear();
-        editAccInfoPG.getUsernameField().sendKeys(username);
+        editAccInfoAdminPG.getUsernameField().clear();
+        editAccInfoAdminPG.getUsernameField().sendKeys(username);
         return this;
     }
 
     public AdminEditAccInfoBL FirstNameField (String firstname) {
-        editAccInfoPG.getFirstNameField().clear();
-        editAccInfoPG.getFirstNameField().sendKeys(firstname);
+        editAccInfoAdminPG.getFirstNameField().clear();
+        editAccInfoAdminPG.getFirstNameField().sendKeys(firstname);
         return this;
     }
 
     public AdminEditAccInfoBL LastNameField (String lastname) {
-        editAccInfoPG.getLastNameField().clear();
-        editAccInfoPG.getLastNameField().sendKeys(lastname);
+        editAccInfoAdminPG.getLastNameField().clear();
+        editAccInfoAdminPG.getLastNameField().sendKeys(lastname);
         return this;
     }
 
     public AdminEditAccInfoBL EmailField (String email) {
-        editAccInfoPG.getEmailField().clear();
-        editAccInfoPG.getEmailField().sendKeys(email);
+        editAccInfoAdminPG.getEmailField().clear();
+        editAccInfoAdminPG.getEmailField().sendKeys(email);
         return this;
     }
 
     public AdminEditAccInfoBL PasswordField (String newPassword) {
-        editAccInfoPG.getPasswordField().clear();
-        editAccInfoPG.getPasswordField().sendKeys(newPassword);
+        editAccInfoAdminPG.getPasswordField().clear();
+        editAccInfoAdminPG.getPasswordField().sendKeys(newPassword);
         return this;
     }
 
     public AdminEditAccInfoBL ConfirmField (String confirmMessage) {
-        editAccInfoPG.getConfirmField().clear();
-        editAccInfoPG.getConfirmField().sendKeys(confirmMessage);
+        editAccInfoAdminPG.getConfirmField().clear();
+        editAccInfoAdminPG.getConfirmField().sendKeys(confirmMessage);
         return this;
     }
 
     public void SaveButton () {
-        editAccInfoPG.getSaveButton().click();
+        editAccInfoAdminPG.getSaveButton().click();
     }
 
     public void CancelButton () {
-        editAccInfoPG.getCancelButton().click();
+        editAccInfoAdminPG.getCancelButton().click();
     }
 
     public void ProfileButton () {
-        editAccInfoPG.getProfileButton().click();
+        editAccInfoAdminPG.getProfileButton().click();
     }
 
 }
