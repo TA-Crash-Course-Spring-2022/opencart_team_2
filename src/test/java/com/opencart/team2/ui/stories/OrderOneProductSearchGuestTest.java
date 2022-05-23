@@ -18,7 +18,6 @@ public class OrderOneProductSearchGuestTest extends TestRunner {
                 .confirmSearch()
                 .clickAddToCart(provider.getId1());
         Assert.assertTrue(new ProductSearchPageBL().getSuccess().contains("Success: "));
-
         new MainPageBL()
                 .clickShoppingCartButton();
         int elSelected = new ShoppingCartBL()

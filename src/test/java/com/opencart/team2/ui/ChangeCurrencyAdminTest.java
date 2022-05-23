@@ -32,7 +32,6 @@ public class ChangeCurrencyAdminTest extends TestRunner {
                 .inputValue(provider.getValue())
                 .selectStatus(provider.getStatus())
                 .clickSaveButton();
-
         new Navigation()
                 .navigateToMainPage();
         new MainPageBL()
