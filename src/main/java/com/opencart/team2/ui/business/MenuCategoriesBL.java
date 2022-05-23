@@ -5,7 +5,7 @@ import com.opencart.team2.ui.constants.MenuName;
 import com.opencart.team2.ui.pages.MenuPage;
 
 public class MenuCategoriesBL {
-    private MenuPage menuPage;
+    private final MenuPage menuPage;
 
     public MenuCategoriesBL() {
         menuPage = new MenuPage();
