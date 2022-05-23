@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="opencart_team_2" target="17" />
+      <module name="opencart_team_2" target="16" />
     </bytecodeTargetLevel>
   </component>
 </project>
