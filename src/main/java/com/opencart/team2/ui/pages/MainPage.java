@@ -3,8 +3,9 @@ package com.opencart.team2.ui.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class HeaderPage extends BasePage{
+public class MainPage extends BasePage{
 
     @FindBy(xpath = "//button[@class='btn btn-link dropdown-toggle']")
     private WebElement currencySelectButton;
@@ -45,7 +46,7 @@ public class HeaderPage extends BasePage{
     @FindBy(xpath = "//ul[@class='list-inline']//a[contains(@href, 'checkout/checkout')]")
     private WebElement checkoutButton;
 
-    public HeaderPage() {
+    public MainPage() {
         super();
     }
 
@@ -53,7 +54,7 @@ public class HeaderPage extends BasePage{
         return currencySelectButton;
     }
     
-    public WebElement getCurrency(String name) {return driver.findElement(By.xpath("//button[@class='currency-select' and @name='"+ name +"']")); }
+    public WebElement getCurrency(String name) {return driver.findElement(By.xpath("//button[contains(@class,'currency-select') and @name='"+ name +"']")); }
 
     public WebElement getContactButton() {
         return contactButton;
@@ -96,6 +97,7 @@ public class HeaderPage extends BasePage{
     }
 
     public WebElement getShoppingCartButton() {
+        wait.until(ExpectedConditions.elementToBeClickable(shoppingCartButton));
         return shoppingCartButton;
     }
 

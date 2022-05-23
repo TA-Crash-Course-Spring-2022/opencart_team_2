@@ -4,51 +4,64 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import java.util.List;
+
 public class AdminCurrencyPage extends BasePage {
 
 
     @FindBy(xpath = "//div[@class='panel-body']//div[@class='table-responsive']//input[@type='checkbox']")
     private WebElement checkboxButton;
-    @FindBy(xpath = "//div[@class='panel-body']//td[@class='text-center']//input[@value='3']")
-    private WebElement checkbox1Button;
-    @FindBy(xpath = "//div[@class='panel-body']//td[@class='text-center']//input[@value='1']")
-    private WebElement checkbox2Button;
-    @FindBy(xpath = "//div[@class='panel-body']//td[@class='text-center']//input[@value='2']")
-    private WebElement checkbox3Button;
+
+    @FindBy(xpath = "//div[@class='pull-right']//a[@class='btn btn-primary']")
+    private WebElement addButton;
+
+    @FindBy(xpath = "//button[@type='button']")
+    private WebElement deleteButton;
+
+    @FindBy(xpath = "//a[@class='btn btn-warning']")
+    private WebElement refreshButton;
+
     @FindBy(xpath = "//div[@class='panel-body']//td[@class='text-left']//a[contains(@href,'title&order')]")
     private WebElement currencyTitleButton;
+
+
     @FindBy(xpath = "//div[@class='panel-body']//td[@class='text-left']//a[contains(@href,'code&order')]")
     private WebElement codeButton;
+
     @FindBy(xpath = "//div[@class='panel-body']//td[@class='text-right']//a[contains(@href,'value&order')]")
     private WebElement valueButton;
+
     @FindBy(xpath = "//div[@class='panel-body']//td[@class='text-left']//a[contains(@href,'modified&order')]")
     private WebElement lastUpdatedButton;
-    @FindBy(xpath = "//div[@class='panel-body']//td[@class='text-right']//a[contains(@href,'3')]")
-    private WebElement edit1Button;
-    @FindBy(xpath = "//div[@class='panel-body']//td[@class='text-right']//a[contains(@href,'1')]")
-    private WebElement edit2Button;
-    @FindBy(xpath = "//div[@class='panel-body']//td[@class='text-right']//a[contains(@href,'2')]")
-    private WebElement edit3Button;
 
+    @FindBy(xpath = "//tbody//input[@type='checkbox']")
+    private List<WebElement> checkbox;
 
-    public AdminCurrencyPage(WebDriver driver) {
-        super(driver);
+    public AdminCurrencyPage() {
+        super();
     }
 
     public WebElement getCheckboxButton() {
         return checkboxButton;
     }
-
-    public WebElement getCheckbox1Button() {
-        return checkbox1Button;
+    public WebElement getCheckbox(int id) {
+        return checkbox.get(id);
     }
 
-    public WebElement getCheckbox2Button() {
-        return checkbox2Button;
+    public List<WebElement> getCheckbox() {
+        return checkbox;
     }
 
-    public WebElement getCheckbox3Button() {
-        return checkbox3Button;
+    public WebElement getAddButton() {
+        return addButton;
+    }
+
+    public WebElement getRefreshButton() {
+        return refreshButton;
+    }
+
+    public WebElement getDeleteButton() {
+        return deleteButton;
     }
 
     public WebElement getCurrencyTitleButton() {
@@ -67,15 +80,4 @@ public class AdminCurrencyPage extends BasePage {
         return lastUpdatedButton;
     }
 
-    public WebElement getEdit1Button() {
-        return edit1Button;
-    }
-
-    public WebElement getEdit2Button() {
-        return edit2Button;
-    }
-
-    public WebElement getEdit3Button() {
-        return edit3Button;
-    }
 }

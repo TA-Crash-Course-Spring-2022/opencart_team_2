@@ -1,7 +1,13 @@
 package com.opencart.team2.ui.business;
 
+import com.opencart.team2.ui.driver.Driver;
 import com.opencart.team2.ui.pages.ShoppingCartPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class ShoppingCartBL {
     private ShoppingCartPage shoppingCartPage;
@@ -33,6 +39,7 @@ public class ShoppingCartBL {
     }
 
     public ShoppingCartBL clickDeleteButtons(int id) {
+        new WebDriverWait(Driver.DRIVERS.get(), Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-original-title='Remove']")));
         shoppingCartPage.getQuantityRemoveButton(id).click();
         return this;
     }
@@ -135,8 +142,8 @@ public class ShoppingCartBL {
          return shoppingCartPage.getProductName().size();
     }
 
-    public HeaderPageBL shoppingCartPageToHeader () {
+    public MainPageBL shoppingCartPageToHeader () {
         shoppingCartPage.getShoppingCartPageToHeader();
-        return new HeaderPageBL();
+        return new MainPageBL();
     }
 }

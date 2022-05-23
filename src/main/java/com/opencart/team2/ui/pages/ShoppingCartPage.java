@@ -2,6 +2,7 @@ package com.opencart.team2.ui.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
@@ -117,6 +118,7 @@ public class ShoppingCartPage extends BasePage {
     }
 
     public WebElement getQuantityRemoveButton(int id) {
+        wait.until(ExpectedConditions.elementToBeClickable(quantityRemoveButton.get(id)));
         return quantityRemoveButton.get(id);
     }
 

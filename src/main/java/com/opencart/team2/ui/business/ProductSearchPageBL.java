@@ -1,7 +1,13 @@
 package com.opencart.team2.ui.business;
 
+import com.opencart.team2.ui.driver.Driver;
 import com.opencart.team2.ui.pages.ProductSearchPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class ProductSearchPageBL {
     private ProductSearchPage productSearchPage;
@@ -74,20 +80,24 @@ public class ProductSearchPageBL {
         return productSearchPage.getShowSelectButton().getFirstSelectedOption().getText();
     }
 
-    public void clickProductPhotoButtons(int id) {
+    public ProductPageBL clickProductPhotoButtons(int id) {
         productSearchPage.getProductPhotoButtons(id).click();
+        return new ProductPageBL();
     }
 
-    public void clickProductButtons(int id) {
+    public ProductPageBL clickProductButtons(int id) {
         productSearchPage.getProductButtons(id).click();
+        return new ProductPageBL();
     }
 
     public ProductSearchPageBL clickAddToCart(int id) {
+        new WebDriverWait(Driver.DRIVERS.get(), Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='button-group']//button[contains(@onclick,'cart.add')]")));
         productSearchPage.getAddToCartButton(id).click();
         return this;
     }
 
     public ProductSearchPageBL clickAddToWishListButton(int id) {
+        new WebDriverWait(Driver.DRIVERS.get(), Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='button-group']//button[contains(@onclick,'wishlist.add')]")));
         productSearchPage.getAddToWishListButton(id).click();
         return this;
     }
@@ -97,13 +107,21 @@ public class ProductSearchPageBL {
         return this;
     }
 
-    public HeaderPageBL productSearchPageToHeader () {
+    public MainPageBL productSearchPageToHeader () {
+        new WebDriverWait(Driver.DRIVERS.get(), Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='×']")));
         productSearchPage.getProductSearchPageToHeader();
-        return new HeaderPageBL();
+        return new MainPageBL();
 
     }
 
     public String getSuccess() {
         return productSearchPage.getSuccess().getText();
     }
+
+    public ProductSearchPageBL clickCloseButton(){
+        new WebDriverWait(Driver.DRIVERS.get(), Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[normalize-space()='×']")));
+        productSearchPage.getCloseButton().click();
+        return this;
+    }
+
 }

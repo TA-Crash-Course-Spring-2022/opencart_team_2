@@ -19,4 +19,5 @@ public enum MenuCategories {
     public String getName(){
         return name;
     }
+
 }

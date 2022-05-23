@@ -69,6 +69,9 @@ public class WishListPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"column-right\"]/div/a[13]")
     private WebElement logOut;
 
+    @FindBy(xpath = "//*[@id=\"account-wishlist\"]/div[1]/button")
+    private WebElement closeButton;
+
     public WishListPage() {
         super();
     }
@@ -98,6 +101,8 @@ public class WishListPage extends BasePage {
     }
 
     public WebElement getContinue() {return continueButton;}
+
+    public WebElement getCloseButton() {return closeButton;}
 
     public WebElement getMyAccount() {
         return myAccount;

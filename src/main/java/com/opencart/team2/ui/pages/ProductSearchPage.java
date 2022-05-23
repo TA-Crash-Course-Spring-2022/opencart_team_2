@@ -59,9 +59,14 @@ public class ProductSearchPage extends BasePage {
     @FindBy(className = "alert")
     private WebElement success;
 
+    @FindBy(className = "close")
+    private WebElement closeButton;
+
     public ProductSearchPage() {
         super();
     }
+
+    public WebElement getCloseButton(){return closeButton; }
 
     public WebElement getSuccess() {
         return success;

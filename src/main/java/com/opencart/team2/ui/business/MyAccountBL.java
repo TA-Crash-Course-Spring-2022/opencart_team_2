@@ -63,8 +63,8 @@ public class MyAccountBL {
         myAccountPage.getNewsletterButton();
     }
 
-    public HeaderPageBL myAccountToHeader () {
+    public MainPageBL myAccountToHeader () {
         myAccountPage.getMyAccountToHeader();
-        return new HeaderPageBL();
+        return new MainPageBL();
     }
 }

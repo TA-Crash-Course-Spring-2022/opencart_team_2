@@ -14,13 +14,13 @@ public class SignUpPageBL {
         return this;
     }
 
-    public SignUpPageBL emailLoginInput (String email) {
+    public SignUpPageBL inputLoginEmail(String email) {
         signUpPage.getEmailLoginInput().clear();
         signUpPage.getEmailLoginInput().sendKeys(email);
         return this;
     }
 
-    public SignUpPageBL passwordLoginInput (String password) {
+    public SignUpPageBL inputLoginPassword(String password) {
         signUpPage.getPasswordLoginInput().clear();
         signUpPage.getPasswordLoginInput().sendKeys(password);
         return this;

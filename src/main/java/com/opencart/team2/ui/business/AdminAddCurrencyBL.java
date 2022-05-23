@@ -8,60 +8,70 @@ public class AdminAddCurrencyBL {
 
     public AdminAddCurrencyBL () {adminAddCurrencyPg = new AdminAddCurrencyPg(); }
 
-    public AdminAddCurrencyBL CurrencyTitleField (String currencyTitle) {
+    public AdminAddCurrencyBL inputCurrencyTitle (String currencyTitle) {
         adminAddCurrencyPg.getCurrencyTitleField().clear();
         adminAddCurrencyPg.getCurrencyTitleField().sendKeys(currencyTitle);
         return this;
     }
 
-    public AdminAddCurrencyBL CodeField (String currencyCode) {
+    public AdminAddCurrencyBL inputCode (String currencyCode) {
         adminAddCurrencyPg.getCodeField().clear();
         adminAddCurrencyPg.getCodeField().sendKeys(currencyCode);
         return this;
     }
 
-    public AdminAddCurrencyBL SymbolLeftField (String symbolLeft) {
+    public AdminAddCurrencyBL inputSymbolLeft (String symbolLeft) {
         adminAddCurrencyPg.getSymbolLeftField().clear();
         adminAddCurrencyPg.getSymbolLeftField().sendKeys(symbolLeft);
         return this;
     }
 
-    public AdminAddCurrencyBL SymbolRightField (String symbolRight) {
+    public AdminAddCurrencyBL inputSymbolRight (String symbolRight) {
         adminAddCurrencyPg.getSymbolRightField().clear();
         adminAddCurrencyPg.getSymbolRightField().sendKeys(symbolRight);
         return this;
     }
 
-    public AdminAddCurrencyBL DecimalPlacesField (String decimalPlaces) {
+    public AdminAddCurrencyBL inputDecimalPlaces (String decimalPlaces) {
         adminAddCurrencyPg.getDecimalPlacesField().clear();
         adminAddCurrencyPg.getDecimalPlacesField().sendKeys(decimalPlaces);
         return this;
     }
 
-    public AdminAddCurrencyBL ValueField (String value) {
+    public AdminAddCurrencyBL inputValue (String value) {
         adminAddCurrencyPg.getValueField().clear();
         adminAddCurrencyPg.getValueField().sendKeys(value);
         return this;
     }
 
-    public void StatusMenu (int id) {
-        adminAddCurrencyPg.getStatusMenu(id).click();
+    public AdminAddCurrencyBL selectStatus(String value){
+        adminAddCurrencyPg.getStatusMenu().selectByValue(value);
+        return this;
     }
 
-    public void SaveButton () {
+    public String getStatus() {
+        return adminAddCurrencyPg.getStatusMenu().getFirstSelectedOption().getText();
+    }
+
+
+    public AdminCurrencyBL clickSaveButton () {
         adminAddCurrencyPg.getSaveButton().click();
+        return new AdminCurrencyBL();
     }
 
-    public void CancelButton () {
+    public AdminCurrencyBL clickCancelButton () {
         adminAddCurrencyPg.getCancelButton().click();
+        return new AdminCurrencyBL();
     }
 
-    public void CurrencyCodeButton () {
-        adminAddCurrencyPg.getCurrencyCodeButton().click();
+    public AdminAddCurrencyBL setCurrency(String title, String code, String left, String tight, String decimal, String value, String status){
+        inputCurrencyTitle(title).inputCode(code).inputSymbolLeft(left).inputSymbolRight(tight).inputDecimalPlaces(decimal).inputValue(value).selectStatus(status).clickSaveButton();
+    return this;
     }
 
-    public void AdminCurrenciesPageButton () {
+    public AdminCurrencyBL AdminCurrenciesPageButton () {
         adminAddCurrencyPg.getAdminCurrenciesPageButton().click();
+        return new AdminCurrencyBL();
     }
 
 }

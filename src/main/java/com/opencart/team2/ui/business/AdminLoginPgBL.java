@@ -10,19 +10,19 @@ public class AdminLoginPgBL {
         adminLoginPg = new AdminLoginPg();
     }
 
-    public AdminLoginPgBL UsernameField (String usernameAdmin) {
+    public AdminLoginPgBL inputUsernameAdmin(String usernameAdmin) {
         adminLoginPg.getUsernameField().clear();
         adminLoginPg.getUsernameField().sendKeys(usernameAdmin);
         return this;
     }
 
-    public AdminLoginPgBL PasswordField (String passwordAdmin) {
+    public AdminLoginPgBL inputPasswordAdmin(String passwordAdmin) {
         adminLoginPg.getPasswordField().clear();
         adminLoginPg.getPasswordField().sendKeys(passwordAdmin);
         return this;
     }
 
-    public void LoginButton () {
+    public void clickLoginAdminButton() {
         adminLoginPg.getLoginButton().click();
     }
 
@@ -30,7 +30,7 @@ public class AdminLoginPgBL {
         adminLoginPg.getForgottenPassword().click();
     }
 
-    public AdminLoginPgBL EmailAddressFieldFP (String email) {
+    public AdminLoginPgBL inputEmailAdmin(String email) {
         adminLoginPg.getEmailAddressFieldFP().clear();
         adminLoginPg.getEmailAddressFieldFP().sendKeys(email);
         return this;

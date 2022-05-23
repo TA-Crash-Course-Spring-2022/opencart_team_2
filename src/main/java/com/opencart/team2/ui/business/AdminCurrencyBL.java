@@ -6,24 +6,36 @@ import org.openqa.selenium.WebDriver;
 public class AdminCurrencyBL {
     private AdminCurrencyPage adminCurrencyPage;
 
-    public AdminCurrencyBL(WebDriver driver) {
-        adminCurrencyPage = new AdminCurrencyPage(driver);
+    public AdminCurrencyBL() {
+        adminCurrencyPage = new AdminCurrencyPage();
     }
 
     public void checkboxButton() {
         adminCurrencyPage.getCheckboxButton().click();
     }
 
-    public void checkbox1Button() {
-        adminCurrencyPage.getCheckbox1Button().click();
+    public AdminCurrencyBL clickCheckboxButton(int id) {
+        adminCurrencyPage.getCheckbox(id).click();
+        return this;
     }
 
-    public void checkbox2Button() {
-        adminCurrencyPage.getCheckbox2Button().click();
+    public int getCheckboxText(){
+        return adminCurrencyPage.getCheckbox().size();
     }
 
-    public void checkbox3Button() {
-        adminCurrencyPage.getCheckbox3Button().click();
+    public AdminAddCurrencyBL clickAddButton(){
+        adminCurrencyPage.getAddButton().click();
+        return new AdminAddCurrencyBL();
+    }
+
+    public AdminCurrencyBL clickDeleteButton(){
+        adminCurrencyPage.getDeleteButton().click();
+        return this;
+    }
+
+    public AdminCurrencyBL clickRefreshButton(){
+        adminCurrencyPage.getRefreshButton().click();
+        return this;
     }
 
     public void currencyTitleButton() {
@@ -36,17 +48,5 @@ public class AdminCurrencyBL {
 
     public void lastUpdatedButton() {
         adminCurrencyPage.getLastUpdatedButton().click();
-    }
-
-    public void edit1Button() {
-        adminCurrencyPage.getEdit1Button().click();
-    }
-
-    public void edit2Button() {
-        adminCurrencyPage.getEdit2Button().click();
-    }
-
-    public void edit3Button() {
-        adminCurrencyPage.getEdit3Button().click();
     }
 }

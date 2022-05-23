@@ -2,6 +2,7 @@ package com.opencart.team2.ui.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
@@ -25,8 +26,8 @@ public class AdminAddCurrencyPg extends BasePage {
     @FindBy(xpath = "//*[@id=\"input-value\"]")
     private WebElement ValueField;
 
-    @FindBy(xpath = "//div[@class='panel-body']//select[@id='input-status']//option")
-    private List<WebElement> StatusMenu;
+    @FindBy(xpath = "//div[@class='panel-body']//select[@id='input-status']")
+    private WebElement StatusMenu;
 
     @FindBy(xpath = "//*[@id=\"content\"]/div[1]/div/div/button")
     private WebElement SaveButton;
@@ -68,8 +69,8 @@ public class AdminAddCurrencyPg extends BasePage {
         return ValueField;
     }
 
-    public WebElement getStatusMenu(int id) {
-        return StatusMenu.get(id);
+    public Select getStatusMenu() {
+        return new Select(StatusMenu);
     }
 
     public WebElement getSaveButton() {
