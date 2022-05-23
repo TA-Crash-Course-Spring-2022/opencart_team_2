@@ -49,6 +49,12 @@ public class ProductPage extends BasePage {
     @FindBy(xpath = "//*[@id=\"u_0_1_97\"]/button/span")
     private WebElement likeButton;
 
+    @FindBy(className = "alert")
+    private WebElement productPGAlert;
+
+    @FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']//a")
+    private List<WebElement> goToComparePage;
+
     public ProductPage () {
         super();
     }
@@ -96,4 +102,9 @@ public class ProductPage extends BasePage {
     public WebElement getQuantityField() { return quantityField; }
 
     public WebElement getLikeButton() { return likeButton; }
+
+    public WebElement getProductPGAlert() { return productPGAlert; }
+
+    public WebElement getGoToComparePage(int id) { return goToComparePage.get(id); }
+
 }

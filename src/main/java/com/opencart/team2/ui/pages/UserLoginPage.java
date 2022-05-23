@@ -18,7 +18,7 @@ public class UserLoginPage extends BasePage {
     private WebElement UserPasswordField;
 
     @FindBy(xpath = "//*[@id=\"content\"]/div/div[2]/div/form/input")
-    private WebElement UserLoginButton;
+    private WebElement loginButton;
 
     public UserLoginPage () {
         super();
@@ -40,8 +40,8 @@ public class UserLoginPage extends BasePage {
         return UserPasswordField;
     }
 
-    public WebElement getUserLoginButton() {
-        return UserLoginButton;
+    public WebElement getLoginButton() {
+        return loginButton;
     }
 
 }

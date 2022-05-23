@@ -15,16 +15,15 @@ public class SearchFieldHeaderBL {
             searchFieldHeaderPG.getSearchLine().sendKeys(productName);
             return new SearchFieldHeaderBL();
     }
-    public ProductSearchPageBL confirmSearch () {
+    public void confirmSearch () {
             searchFieldHeaderPG.getEnterButton().click();
-            return new ProductSearchPageBL();
     }
 
-    public ProductSearchPageBL searchProd (String productName) {
+    public SearchFieldHeaderBL searchForProduct(String productName) {
         searchFieldHeaderPG.getSearchLine().clear();
         searchFieldHeaderPG.getSearchLine().sendKeys(productName);
         searchFieldHeaderPG.getSearchLine().sendKeys(Keys.ENTER);
-        return new ProductSearchPageBL();
+        return this;
     }
 
     public void opencartHomePage () {

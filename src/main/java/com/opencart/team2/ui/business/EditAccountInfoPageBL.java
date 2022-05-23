@@ -9,6 +9,19 @@ public class EditAccountInfoPageBL {
         editAccountInfoPage= new EditAccountInfoPage();
     }
 
+    public EditAccountInfoPageBL CancelChanges (String oldFirstName, String oldLastName, String oldEmail, String oldTelephone) {
+        editAccountInfoPage.getFirstNameInput().clear();
+        editAccountInfoPage.getFirstNameInput().sendKeys(oldFirstName);
+        editAccountInfoPage.getLastNameInput().clear();
+        editAccountInfoPage.getLastNameInput().sendKeys(oldLastName);
+        editAccountInfoPage.getEmailInput().clear();
+        editAccountInfoPage.getEmailInput().sendKeys(oldEmail);
+        editAccountInfoPage.getTelephoneInput().clear();
+        editAccountInfoPage.getTelephoneInput().sendKeys(oldTelephone);
+        editAccountInfoPage.getContinueButton().click();
+        return this;
+    }
+
     public EditAccountInfoPageBL firstNameInput (String fName) {
         editAccountInfoPage.getFirstNameInput().clear();
         editAccountInfoPage.getFirstNameInput().sendKeys(fName);
@@ -38,12 +51,12 @@ public class EditAccountInfoPageBL {
         return new MyAccountBL();
     }
 
-    public MyAccountBL continueButton() {
+    public MyAccountBL clickContinueButton() {
         editAccountInfoPage.getContinueButton().click();
         return new MyAccountBL();
     }
 
     public MyAccountBL setUser (String lName, String  fName, String  email, String  phone){
-        return firstNameInput(lName).lastNameInput(fName).emailInput(email).telephoneInput(phone).continueButton();
+        return firstNameInput(lName).lastNameInput(fName).emailInput(email).telephoneInput(phone).clickContinueButton();
     }
 }

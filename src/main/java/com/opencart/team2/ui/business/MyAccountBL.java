@@ -9,7 +9,7 @@ public class MyAccountBL {
         myAccountPage = new MyAccountPage();
     }
 
-    public EditAccountInfoPageBL editButton() {
+    public EditAccountInfoPageBL clickEditButton() {
         myAccountPage.getEditButton().click();
         return new EditAccountInfoPageBL();
     }

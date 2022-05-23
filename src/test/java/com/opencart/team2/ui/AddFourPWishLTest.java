@@ -1,9 +1,16 @@
 package com.opencart.team2.ui;
 
+import com.opencart.team2.ui.business.HomePageBL;
 import com.opencart.team2.ui.business.UserLoginPageBL;
 import com.opencart.team2.ui.navigation.Navigation;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
+
 
 public class AddFourPWishLTest extends TestRunner {
 
@@ -12,19 +19,29 @@ public class AddFourPWishLTest extends TestRunner {
 
         new Navigation().navigateToMainPage();
 
-        String email = "tester132q@gmail.com";
-        String userPassword = "test";
-        new UserLoginPageBL()
-                .MyAccountMainButton()
-                .UserLoginMainButton()
-                .UserEmailField(email)
-                .UserPasswordField(userPassword);
+        new UserLoginPageBL().UserLoginM(provider.getLoginEmail(), provider.getLoginPassword());
 
         new Navigation().navigateToMainPage();
 
-        driver.findElement(By.cssSelector("#content > div.row > div:nth-child(1) > div > div.button-group > button:nth-child(2)")).click();
-        driver.findElement(By.cssSelector("#content > div.row > div:nth-child(2) > div > div.button-group > button:nth-child(2)")).click();
-        driver.findElement(By.cssSelector("#content > div.row > div:nth-child(3) > div > div.button-group > button:nth-child(2)")).click();
-        driver.findElement(By.cssSelector("#content > div.row > div:nth-child(4) > div > div.button-group > button:nth-child(2)")).click();
+        new HomePageBL().clickAddToWishListButton(0);
+        Assert.assertTrue(new HomePageBL().alert().contains("Success: "));
+        //new HomePageBL().clickAlertCloseButton();
+
+        Duration duration = Duration.ofSeconds(10);
+        WebDriverWait wait = new WebDriverWait(driver,duration);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='button-group']//button[contains(@onclick,'wishlist.add')]")));
+        new HomePageBL().clickAddToWishListButton(1);
+        Assert.assertTrue(new HomePageBL().alert().contains("Success: "));
+        //new HomePageBL().clickAlertCloseButton();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='button-group']//button[contains(@onclick,'wishlist.add')]")));
+        new HomePageBL().clickAddToWishListButton(2);
+        Assert.assertTrue(new HomePageBL().alert().contains("Success: "));
+        new HomePageBL().clickAlertCloseButton();
+
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='button-group']//button[contains(@onclick,'wishlist.add')]")));
+        new HomePageBL().clickAddToWishListButton(3);
+        Assert.assertTrue(new HomePageBL().alert().contains("Success: "));
+        new HomePageBL().clickAlertCloseButton();
     }
 }

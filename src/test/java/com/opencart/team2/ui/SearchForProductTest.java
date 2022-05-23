@@ -1,9 +1,8 @@
 package com.opencart.team2.ui;
 
-import com.opencart.team2.ui.business.UserLoginPageBL;
-import com.opencart.team2.ui.business.SearchFieldHeaderBL;
+import com.opencart.team2.ui.business.*;
 import com.opencart.team2.ui.navigation.Navigation;
-import org.testng.Assert;
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 public class SearchForProductTest extends TestRunner {
@@ -12,20 +11,12 @@ public class SearchForProductTest extends TestRunner {
     public void Test() {
         new Navigation().navigateToMainPage();
 
-        String email = "tester132q@gmail.com";
-        String userPassword = "test";
-        new UserLoginPageBL()
-                .MyAccountMainButton()
-                .UserLoginMainButton()
-                .UserEmailField(email)
-                .UserPasswordField(userPassword);
+        new UserLoginPageBL().UserLoginM(provider.getLoginEmail(), provider.getLoginPassword());
 
         String productName = "Iphone";
-        new SearchFieldHeaderBL()
-        .inputProduct(productName)
-        .confirmSearch();
+        new SearchFieldHeaderBL().searchForProduct(productName);
 
-        int id = 0;
-        Assert.assertEquals(id, 0);
+        driver.findElement(By.xpath("//div[@class='caption']//" +
+                "a[contains(@href, 'product/product&product_id')]")).isDisplayed();
     }
 }

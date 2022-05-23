@@ -1,7 +1,6 @@
 package com.opencart.team2.ui.business;
 
 import com.opencart.team2.ui.pages.AdminCurrencyPage;
-import org.openqa.selenium.WebDriver;
 
 public class AdminCurrencyBL {
     private AdminCurrencyPage adminCurrencyPage;

@@ -1,7 +1,13 @@
 package com.opencart.team2.ui.business;
 
+import com.opencart.team2.ui.driver.Driver;
 import com.opencart.team2.ui.pages.ProductSearchPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class ProductSearchPageBL {
     private ProductSearchPage productSearchPage;
@@ -78,13 +84,20 @@ public class ProductSearchPageBL {
         productSearchPage.getProductPhotoButtons(id).click();
     }
 
-    public void clickProductButtons(int id) {
+    public ProductPageBL clickProductButtons(int id) {
         productSearchPage.getProductButtons(id).click();
+        return new ProductPageBL();
     }
 
     public ProductSearchPageBL clickAddToCart(int id) {
         productSearchPage.getAddToCartButton(id).click();
-        return this;
+       return new ProductSearchPageBL();
+    }
+
+    public ProductSearchPageBL clickCloseButton(){
+        new WebDriverWait(Driver.DRIVERS.get(), Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(By.className("//div[@class='alert alert-success alert-dismissible']//button")));
+        productSearchPage.getCloseButton().click();
+        return new ProductSearchPageBL();
     }
 
     public ProductSearchPageBL clickAddToWishListButton(int id) {

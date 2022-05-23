@@ -10,16 +10,21 @@ public class ProductPageBL {
         productPage = new ProductPage ();
     }
 
-    public void addToWishList () {
+    public ComparePageBL comparePage (int id) {
+        productPage.getGoToComparePage(id).click();
+        return new ComparePageBL();
+    }
+
+    public void clickAddToWishList() {
         productPage.getAddToWishList().click();
     }
 
-    public ProductPageBL CompareThisProduct () {
+    public ProductPageBL clickCompareThisProduct() {
         productPage.getCompareThisProduct().click();
         return this;
     }
 
-    public void addToCart () {
+    public void clickAddToCart() {
         productPage.getAddToCart().click();
     }
 
@@ -41,6 +46,10 @@ public class ProductPageBL {
         productPage.getReviewsReviewField().click();
         productPage.getReviewsReviewField().sendKeys(reviewText);
         return this;
+    }
+
+    public String alert() {
+        return productPage.getProductPGAlert().getText();
     }
 
     public void continueButton () {

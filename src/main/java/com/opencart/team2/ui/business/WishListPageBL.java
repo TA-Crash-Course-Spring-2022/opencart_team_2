@@ -17,7 +17,7 @@ public class WishListPageBL {
         return wishListPage.getProductStock().size();
     }
 
-    public void addToCardButton(int id) {
+    public void clickAddToCardButton(int id) {
         wishListPage.getProductAddToCard(id).click();
     }
 

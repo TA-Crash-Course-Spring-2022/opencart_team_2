@@ -53,10 +53,13 @@ public class ProductSearchPage extends BasePage {
     @FindBy(xpath = "//div[@class='button-group']//button[contains(@onclick,'compare.add')]")
     private List<WebElement> compareButton;
 
+    @FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']//button")
+    private  WebElement closeButton;
+
     @FindBy(id = "top")
     private WebElement productSearchPageToHeader;
 
-    @FindBy(className = "alert")
+    @FindBy(className = "alert alert-success alert-desmissible")
     private WebElement success;
 
     public ProductSearchPage() {
@@ -94,6 +97,8 @@ public class ProductSearchPage extends BasePage {
     public WebElement getListButton() {
         return listButton;
     }
+
+    public WebElement getCloseButton() { return closeButton; }
 
     public WebElement getGridButton() {
         return gridButton;

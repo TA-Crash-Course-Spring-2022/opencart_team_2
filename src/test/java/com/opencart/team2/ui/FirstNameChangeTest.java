@@ -13,20 +13,13 @@ public class FirstNameChangeTest extends TestRunner {
     public void Test () {
         new Navigation().navigateToMainPage();
 
-        String email = "tester132q@gmail.com";
-        String userPassword = "test";
-        new UserLoginPageBL()
-                .MyAccountMainButton()
-                .UserLoginMainButton()
-                .UserEmailField(email)
-                .UserPasswordField(userPassword);
+        new UserLoginPageBL().UserLoginM(provider.getLoginEmail(), provider.getLoginPassword());
 
-        String newFirstName = "Petro";
-        new MyAccountBL().editButton();
+        new MyAccountBL().clickEditButton();
 
         new EditAccountInfoPageBL()
-                .firstNameInput(newFirstName)
-                .continueButton();
+                .firstNameInput(provider.getNewFirstName())
+                .clickContinueButton();
 
         Assert.assertEquals(new MyAccountBL().getAlert(), "Success: Your account has been successfully updated.");
     }

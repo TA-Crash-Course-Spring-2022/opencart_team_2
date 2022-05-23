@@ -21,9 +21,9 @@ public class ChangeEmailTest extends TestRunner{
                 .emailLoginInput(inputEmail)
                 .passwordLoginInput(inputPassword)
                 .continueLoginButton()
-                .editButton()
+                .clickEditButton()
                 .emailInput(newEmail)
-                .continueButton();
+                .clickContinueButton();
         Assert.assertEquals(new MyAccountBL().getAlert(), "Success: Your account has been successfully updated.");
         new HeaderPageBL()
                 .clickAccountSelectButton()
@@ -32,9 +32,9 @@ public class ChangeEmailTest extends TestRunner{
                 .emailLoginInput(newEmail)
                 .passwordLoginInput(inputPassword)
                 .continueLoginButton()
-                .editButton()
+                .clickEditButton()
                 .emailInput(inputEmail)
-                .continueButton();
+                .clickContinueButton();
         Assert.assertEquals(new MyAccountBL().getAlert(), "Success: Your account has been successfully updated.");
     }
 }

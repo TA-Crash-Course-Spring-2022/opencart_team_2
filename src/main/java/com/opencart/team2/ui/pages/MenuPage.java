@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 public class MenuPage extends BasePage {
 
     public WebElement getMenuCategory(MenuName name) {
+
         return driver.findElement(By.id("menu-" + name.getName()));
     }
 

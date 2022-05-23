@@ -1,6 +1,5 @@
 package com.opencart.team2.ui;
 
-
 import com.opencart.team2.ui.business.*;
 import com.opencart.team2.ui.navigation.Navigation;
 import org.testng.Assert;
@@ -12,28 +11,22 @@ public class ChangeAllAccInfoTest extends TestRunner {
     public void Test() {
         new Navigation().navigateToMainPage();
 
-        String email = "tester132q@gmail.com";
-        String userPassword = "test";
-        new UserLoginPageBL()
-                .MyAccountMainButton()
-                .UserLoginMainButton()
-                .UserEmailField(email)
-                .UserPasswordField(userPassword);
+        new UserLoginPageBL().UserLoginM(provider.getLoginEmail(), provider.getLoginPassword());
 
-        String newFirstName = "Petro";
-        String newLastName = "LastPetro";
-        String newEmail = "newTester132q@gmail.com";
-        String newTelephone = "0112233445566";
-
-        new MyAccountBL().editButton();
+        new MyAccountBL().clickEditButton();
 
         new EditAccountInfoPageBL()
-                .firstNameInput(newFirstName)
-                .lastNameInput(newLastName)
-                .emailInput(newEmail)
-                .telephoneInput(newTelephone)
-                .continueButton();
+                .firstNameInput(provider.getNewFirstName())
+                .lastNameInput(provider.getNewLastName())
+                .emailInput(provider.getNewEmail())
+                .telephoneInput(provider.getNewTelephone())
+                .clickContinueButton();
 
         Assert.assertEquals(new MyAccountBL().getAlert(), "Success: Your account has been successfully updated.");
+
+        new MyAccountBL().clickEditButton();
+
+        new EditAccountInfoPageBL().CancelChanges(provider.getFirstName(),
+                provider.getLastName(), provider.getLoginEmail(), provider.getDefaultTelephone());
     }
 }
